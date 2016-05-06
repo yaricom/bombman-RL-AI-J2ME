@@ -1,0 +1,106 @@
+<!-- 
+    This file defines the device-groups.
+    Each device can belong to an arbitrary number of groups.
+
+    Copyright (c) 2004, 2005 Robert Virkus / Enough Software
+
+    This file is part of J2ME Polish.
+
+    J2ME Polish is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    J2ME Polish is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Foobar; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+    Commercial licenses are also available, please
+    refer to the accompanying LICENSE.txt or visit
+    http://www.j2mepolish.org for details.
+
+-->
+<groups>
+	<group>
+		<name>Nokia-UI</name>
+		<features>supportSpriteTransformation, hasCommandKeyEvents, isDoubleBuffered</features>
+		<capability name="classes.fullscreen" value="com.nokia.mid.ui.FullCanvas" />
+		<capability name="JavaPackage" value="nokia-ui" />
+		<capability name="key.LeftSoftKey" value="-6" />
+		<capability name="key.RightSoftKey" value="-7" />
+	</group>
+
+	<group>
+		<name>Series40</name>
+		<parent>Nokia-UI</parent>
+		<capability name="JavaPlatform" value="MIDP/1.0" />
+		<capability name="ScreenSize" value="128x128" />
+		<capability name="CanvasSize" value="128x96" />
+		<capability name="FullCanvasSize" value="128x128" />
+		<capability name="JavaConfiguration" value="CLDC/1.0" />
+		<capability name="Emulator.Class" value="NokiaEmulator" />
+		<capability name="Emulator.Skin" value="Nokia_S40_DP20_SDK_1_0" />
+		<capability name="Font.small" value="9" />
+		<capability name="Font.medium" value="12" />
+		<capability name="Font.large" value="16" />
+		<capability name="Font.medium.oldFirmware" value="16" />
+		<capability name="Font.large.oldFirmware" value="23" />
+	</group>
+
+	<group>
+		<name>Series60</name>
+		<parent>Nokia-UI</parent>
+		<capability name="JavaPlatform" value="MIDP/1.0" />
+		<capability name="ScreenSize" value="176x208" />
+		<capability name="FullCanvasSize" value="176x208" />
+		<capability name="JavaConfiguration" value="CLDC/1.0" />
+		<capability name="Font.small" value="14" />
+		<capability name="Font.medium" value="15" />
+		<capability name="Font.large" value="19" />
+		<capability name="Emulator.Class" value="NokiaEmulator" />
+		<capability name="Emulator.Skin" value="Series_60_MIDP_Concept_SDK_Beta_0_3_1_Nokia_edition" />
+		<capability name="Emulator.Skin.2" value="Series_60_MIDP_SDK_2_1" />
+		<capability name="Emulator.Skin.3" value="Series_60_MIDP_SDK_2_1_Beta" />
+	</group>
+
+	<group>
+		<name>Series80</name>
+		<parent>Nokia-UI</parent>
+		<capability name="JavaConfiguration" value="CLDC/1.1" />
+		<capability name="Emulator.Class" value="NokiaEmulator" />
+		<capability name="Emulator.Skin" value="Series80_MIDP_SDK_1_0b" />
+	</group>
+	
+	<group>
+		<name>Series90</name>
+		<parent>Nokia-UI</parent>
+		<capability name="JavaConfiguration" value="CLDC/1.0" />
+		<capability name="Emulator.Class" value="NokiaEmulator" />
+		<capability name="Emulator.Skin" value="Series_90_MIDP_Concept_SDK_Beta_0_1" />
+	</group>
+
+	<group>
+		<name>Samsung-UI</name>
+		<features>hasCommandKeyEvents, isDoubleBuffered</features>
+		<capability name="JavaPackage" value="samsung-media-api-1.0" />
+		<capability name="key.LeftSoftKey" value="-6" />
+		<capability name="key.RightSoftKey" value="-7" />
+	</group>
+
+
+	<group>
+		<name>LG-UI</name>
+		<features>hasCommandKeyEvents, isDoubleBuffered</features>
+		<capability name="JavaPackage" value="lg-mmpp-1.0.1" />
+		<capability name="key.LeftSoftKey" value="-6" />
+		<capability name="key.RightSoftKey" value="-7" />
+	</group>
+
+
+		
+</groups>

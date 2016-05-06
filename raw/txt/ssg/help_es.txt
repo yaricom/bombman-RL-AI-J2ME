@@ -1,0 +1,9 @@
+#############
+# Help text #
+#############
+El fin del juego es completar todos los niveles colocando bombas en lugares estratégicos para ganarle al enemigo y evitando los obstáculos de tu camino. \n\nPowerups\n\n El juego contiene tres diferentes tipos de powerups que puedes encontrar en los obstáculos. Estos son : \n Llamas - aumentan la potencia del bombardero. \nBombas - El bombardero puede arrojar diferentes bombas a la vez sin esperar a que la primera explote.\nPatines - aumentan la velocidad del bombardero.\n\nManejo\n\n Usa las teclas de navegación o las numéricas correspondientes para controlar al bombardero.\nUsa la tecla Fuego para soltar bombas.
+
+##############
+# About text #
+##############
+Desarrollado y publicado por: \nSandager Small Games\n  Copyrigth:\nSandager Small Games 2005\nSplash Graficas:\Jeppe Højholdt\nGráficas:\nNewground\nProducido por:\nNewGround

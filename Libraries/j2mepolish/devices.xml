@@ -1,0 +1,2004 @@
+<!--                                                   
+    devices.xml defines all known devices. 
+    You can add or change the existing specifications and
+    use the changed settings in the code.
+
+    Copyright (c) 2004, 2005 Robert Virkus / Enough Software
+
+    This file is part of J2ME Polish.
+
+    J2ME Polish is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    J2ME Polish is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Foobar; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+    Commercial licenses are also available, please
+    refer to the accompanying LICENSE.txt or visit
+    http://www.j2mepolish.org for details.
+
+-->
+<devices>
+
+<!-- Standard devices -->
+    <device
+        supportsPolishGui="true" >
+        <identifier>Generic/midp1</identifier>
+        <features>isVirtual</features>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+    </device>
+
+    <device
+        supportsPolishGui="false" >
+        <identifier>Generic/PlainMidp1</identifier>
+        <features>isVirtual</features>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+    </device>
+    
+    <device
+        supportsPolishGui="true" >
+        <identifier>Generic/midp2</identifier>
+        <features>isVirtual</features>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+    </device>
+
+    <device
+        supportsPolishGui="true" >
+        <identifier>Generic/Midp2Cldc11</identifier>
+        <features>isVirtual</features>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.1" />
+    </device>
+
+    <device
+        supportsPolishGui="true" >
+        <identifier>Generic/multi</identifier>
+        <description>This device combines several features of different vendors. It can be used
+                     in case you want to use dynamic class loading etc for determing the 
+                     device capabilities during runtime.
+        </description>
+        <features>isVirtual</features>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.1" />
+        <capability name="JavaPackage" value="mmapi, wmapi, nokia-ui, btapi" />
+    </device>
+    
+    <device
+        supportsPolishGui="false" >
+        <identifier>Generic/PlainMidp2</identifier>
+        <features>isVirtual</features>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+    </device>
+
+    <device
+        supportsPolishGui="false" >
+        <identifier>Generic/PlainMidp2Cldc11</identifier>
+        <features>isVirtual</features>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.1" />
+    </device>
+
+
+    <device
+        supportsPolishGui="true" >
+        <identifier>Generic/jsr185</identifier>
+        <features>isVirtual</features>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="JavaPackage" value="mmapi, wmapi" />
+        <capability name="SoundFormat" value="midi, amr" />
+    </device>
+
+    <device
+        supportsPolishGui="true" >
+        <identifier>Generic/jtwi</identifier>
+        <features>isVirtual</features>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="JavaPackage" value="mmapi,wmapi" />
+        <capability name="SoundFormat" value="midi, amr" />
+    </device>   
+
+    <device
+        supportsPolishGui="true" >
+        <identifier>Generic/wmapi20</identifier>
+        <features>isVirtual</features>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="JavaPackage" value="mmapi,wmapi2.0" />
+        <capability name="SoundFormat" value="midi, amr" />
+    </device>   
+    
+<!-- virtual devices -->
+
+<!-- These devices do not actually exist, but they share the common
+     capabilities of their "class". 
+-->
+
+    <device
+        supportsPolishGui="true" >
+        <identifier>Nokia/Series60</identifier>
+        <features>isVirtual</features>
+        <groups>Series60</groups>
+        <capability name="OS" value="Symbian"/>
+        <capability name="JavaPackage" value="mmapi, wmapi" />
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="VideoFormat" value="3gpp" />
+        <capability name="SoundFormat" value="midi, amr" />
+        <capability name="Bugs" value="dateFieldAcceptsNoNullDate" />
+    </device>
+
+    <device
+        supportsPolishGui="true" >
+        <identifier>Nokia/Series60Midp2</identifier>
+        <features>isVirtual</features>
+        <groups>Series60</groups>
+        <capability name="OS" value="Symbian"/>
+        <capability name="JavaPackage" value="mmapi, wmapi, btapi" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="VideoFormat" value="3gpp" />
+        <capability name="SoundFormat" value="midi, amr" />
+    </device>
+
+    <device
+        supportsPolishGui="true" >
+        <identifier>Nokia/midp2</identifier>
+        <features>isVirtual, hasCommandKeyEvents</features>
+        <groups></groups>
+        <capability name="OS" value="Symbian"/>
+        <capability name="JavaPackage" value="mmapi, wmapi, btapi" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="VideoFormat" value="3gpp" />
+        <capability name="SoundFormat" value="midi, amr" />
+    </device>
+
+    <device
+        supportsPolishGui="false" >
+        <identifier>Nokia/Series40</identifier>
+        <features>isVirtual</features>
+        <groups>Series40</groups>
+        <capability name="OS" value="Symbian"/>
+        <capability name="ScreenSize" value="128x128"/>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="SoundFormat" value="midi" />
+        <capability name="HeapSize" value="200kb" />
+        <capability name="MaxJarSize" value="64kb" />
+    </device>
+
+    <device
+        supportsPolishGui="true" >
+        <identifier>Nokia/Series40Midp2</identifier>
+        <features>isVirtual</features>
+        <groups>Series40</groups>
+        <capability name="OS" value="Symbian"/>
+        <capability name="ScreenSize" value="128x128"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPackage" value="wmapi, mmapi" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="VideoFormat" value="3gpp" />
+        <capability name="SoundFormat" value="midi" />
+        <capability name="HeapSize" value="512kb" />
+        <capability name="MaxJarSize" value="128kb" />
+    </device>
+        
+    <device
+        supportsPolishGui="true" >
+        <identifier>Siemens/midp1</identifier>
+        <features>isVirtual, hasCommandKeyEvents</features>
+        <groups></groups>
+        <capability name="OS" value="Siemens"/>
+        <!--
+        <capability name="JavaPackage" value="siemens-color-game-api, siemens-extension-api" />
+        -->
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="SoundFormat" value="midi" />
+        <capability name="key.LeftSoftKey" value="-1" />
+        <capability name="key.RightSoftKey" value="-4" />
+        <capability name="key.MiddleSoftKey" value="-26" />
+    </device>
+
+    <device
+        supportsPolishGui="true">
+        <identifier>Siemens/midp2</identifier>
+        <features>isVirtual, hasCommandKeyEvents, isDoubleBuffered</features>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPackage" value="wmapi, mmapi, siemens-color-game, siemens-extension-api" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="SoundFormat" value="midi, midi-0, midi-1, midi40, wav, amr" />
+        <capability name="key.LeftSoftKey" value="-1" />
+        <capability name="key.RightSoftKey" value="-4" />
+        <capability name="key.MiddleSoftKey" value="-26" />
+        <capability name="key.ReturnKey" value="-12" />
+        <capability name="key.ClearKey" value="-12" />
+        <capability name="Font.small" value="12" />
+        <capability name="Font.medium" value="15" />
+        <capability name="Font.large" value="23" />
+        <capability name="Bugs" value="layerManagerSetViewWindow" />    
+    </device>
+
+<!-- Sony-Ericsson devices -->
+
+    <device>
+        <identifier>Sony-Ericsson/T610, Sony-Ericsson/T618</identifier>
+        <groups></groups>
+        <features>hasCamera</features>
+        <capability name="ScreenSize" value="128x160"/>
+        <capability name="CanvasSize" value="128x127"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPackage" value="mmapi" />
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="SoundFormat" value="iMelody, iMelody-1.2, midi, midi32, amr" />
+        <capability name="HeapSize" value="256 kb" />
+        <capability name="VideoHeapSize" value="80 kb" />
+        <capability name="NativeUiHeapSize" value="150 kb" />
+        <capability name="StorageSize" value="2 MB" />
+        <capability name="DRM" value="OMA-Forward Lock" />
+        <capability name="DebugInterface" value="KDWP" />
+    </device>
+
+    <device>
+        <identifier>Sony-Ericsson/K300</identifier>
+        <groups></groups>
+        <features>hasCamera, hasVideo, doubleBuffering, hasCommandKeyEvents</features>
+        <capability name="ScreenSize" value="128x128"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPackage" value="mmapi, wmapi1.1, m3g" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.1" />
+        <capability name="JavaProtocol" value="http, https, ssl, tls, tcp, udp" />
+        <capability name="SoundFormat" value="midi, midi40, amr, aac, wav, mp3, mp4" />
+        <capability name="VideoFormat" value="mpeg-4, 3gpp, h.263, svgt" />
+        <capability name="ImageFormat" value="gif, gif87a, gif89a, png, png1.0, bmp, bmp3, wbmp" />
+        <capability name="CaptureImageFormat" value="jpeg" />
+        <capability name="StorageSize" value="12 MB" />
+        <capability name="HeapSize" value="1.5 MB" />
+        <capability name="VideoHeapSize" value="500 kb" />
+        <capability name="DRM" value="OMA Phase 1" />
+        <capability name="CameraZoom" value="4x" />
+        <capability name="CameraResolution" value="vga" />
+        <capability name="Region" value="EMEA,AP,China,LAM,NAM" />
+        <capability name="Network" value="GSM, GPRS" />
+        <capability name="Frequency" value="900,1800,1900" />
+        <capability name="Emulator.Skin" value="SonyEricsson_K300" />
+        <capability name="DebugInterface" value="KDWP" />
+    </device>
+
+    <device>
+        <identifier>Sony-Ericsson/K500, Sony-Ericsson/K500i, Sony-Ericsson/F500, Sony-Ericsson/F500i</identifier>
+        <groups>Nokia-UI</groups>
+        <features>hasCamera, hasVideo, doubleBuffering, hasCommandKeyEvents</features>
+        <capability name="ScreenSize" value="128x160"/>
+        <capability name="FullCanvasSize" value="128x160"/>
+        <capability name="CanvasSize" value="128x128"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPackage" value="mmapi, wmapi1.1, 3d-api" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.1" />
+        <capability name="JavaProtocol" value="http, https, ssl, tls, tcp, udp" />
+        <capability name="SoundFormat" value="iMelody, iMelody-1.2, midi, midi40, amr, mp3" />
+        <capability name="VideoFormat" value="mpeg-4, 3gpp, h.263" />
+        <capability name="ImageFormat" value="gif, gif87a, gif89a, png, png1.0, bmp, bmp3, wbmp" />
+        <capability name="CaptureImageFormat" value="jpeg" />
+        <capability name="StorageSize" value="10 MB" />
+        <capability name="HeapSize" value="1.5 MB" />
+        <capability name="VideoHeapSize" value="500 kb" />
+        <capability name="DRM" value="OMA Phase 1" />
+        <capability name="CameraZoom" value="4" />
+        <capability name="CameraResolution" value="vga" />
+        <capability name="Region" value="EMEA,AP" />
+        <capability name="Network" value="GSM, GPRS" />
+        <capability name="Frequency" value="850,1800,1900" />
+        <capability name="Emulator.Skin" value="SonyEricsson_F500i" />
+        <capability name="DebugInterface" value="KDWP" />
+    </device>
+    
+    <device>
+        <identifier>Sony-Ericsson/Z1010</identifier>
+        <groups></groups>
+        <features>hasCamera, hasVideo, hasCommandKeyEvents</features>
+        <capability name="ScreenSize" value="176x220"/>
+        <capability name="FullCanvasSize" value="176x220"/>
+        <capability name="CanvasSize" value="176x182"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPackage" value="mmapi, wmapi" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.1" />
+        <capability name="SoundFormat" value="iMelody, iMelody-1.2, midi, midi40, amr, mp3" />
+        <capability name="VideoFormat" value="mpeg-4, 3gpp" />
+        <capability name="HeapSize" value="1.5 MB" />
+        <capability name="StorageSize" value="8 MB" />
+        <capability name="DRM" value="OMA Phase 1" />
+        <capability name="Bugs" value="fullScreenInPaint, drawRgbOrigin" />
+    </device>
+        
+    <device>
+        <identifier>Sony-Ericsson/K700, Sony-Ericsson/K700i, Sony-Ericsson/K700c</identifier>
+        <groups>Nokia-UI</groups>
+        <features>hasCamera, hasVideo, hasCommandKeyEvents</features>
+        <capability name="ScreenSize" value="176x220"/>
+        <capability name="FullCanvasSize" value="176x220"/>
+        <capability name="CanvasSize" value="176x176"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPackage" value="mmapi, wmapi1.1, 3d-api" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.1" />
+        <capability name="SoundFormat" value="iMelody, iMelody-1.2, midi, midi40, amr, mp3, aac" />
+        <capability name="VideoFormat" value="mpeg-4, 3gpp, h.263" />
+        <capability name="ImageFormat" value="gif, gif87a, gif89a, png, png1.0, bmp, bmp3, wbmp" />
+        <capability name="CaptureImageFormat" value="jpeg" />
+        <capability name="JavaProtocol" value="http, https, ssl, tls, tcp, udp" />
+        <capability name="StorageSize" value="40 MB" />
+        <capability name="HeapSize" value="1.5 MB" />
+        <capability name="VideoHeapSize" value="500 kb" />
+        <capability name="DRM" value="OMA Phase 1" />
+        <capability name="CameraZoom" value="4" />
+        <capability name="Emulator.Skin" value="SonyEricsson_K700" />
+        <capability name="DebugInterface" value="KDWP" />
+        <capability name="Bugs" value="drawRgbOrigin, ImageIOStreamAutoClose, needsNokiaUiForSystemAlerts" />
+        <capability name="Font.small" value="15" />
+        <capability name="Font.medium" value="18" />
+        <capability name="Font.large" value="22" />
+    </device>
+        
+    <device>
+        <identifier>Sony-Ericsson/S700, Sony-Ericsson/S700i, Sony-Ericsson/S700c</identifier>
+        <groups></groups>
+        <features>hasCamera, hasVideo, hasCommandKeyEvents</features>
+        <capability name="ScreenSize" value="240x320"/>
+        <capability name="FullCanvasSize" value="240x320"/>
+        <capability name="CanvasSize" value="240x266"/>
+        <capability name="BitsPerPixel" value="18"/>
+        <capability name="JavaPackage" value="mmapi, wmapi1.1, 3d-api" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.1" />
+        <capability name="JavaProtocol" value="http, https, ssl, tls, tcp, udp" />
+        <capability name="SoundFormat" value="iMelody, iMelody-1.2, midi, midi40, amr, mp3, wav, tone sequence, aac" />
+        <capability name="VideoFormat" value="mpeg-4, 3gpp, h.263" />
+        <capability name="CaptureImageFormat" value="jpeg" />
+        <capability name="HeapSize" value="1.5 MB" />
+        <capability name="VideoHeapSize" value="500 kb" />
+        <capability name="StorageSize" value="32 MB" />
+        <capability name="DRM" value="OMA Phase 1" />
+        <capability name="CameraZoom" value="8" />
+        <capability name="CameraResolution" value="1.3 MP" />
+        <capability name="Emulator.Skin" value="SonyEricsson_S700" />
+        <capability name="DebugInterface" value="KDWP" />
+    </device>
+
+    <device>
+        <identifier>Sony-Ericsson/P900, Sony-Ericsson/P908</identifier>
+        <groups></groups>
+        <features>hasCamera, hasVideo, hasPointerEvents, hasPointerMotionEvents, needsManualMenu, hasCommandKeyEvents</features>
+        <capability name="OS" value="Symbian 7.0"/>
+        <capability name="ScreenSize" value="208x320"/>
+        <capability name="ClosedFlipScreenSize" value="208x208"/>
+        <capability name="CanvasSize" value="208x253"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPackage" value="mmapi, wmapi, btapi" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="JavaProtocol" value="http, socket, https, ssl, datagram"/>
+        <capability name="SoundFormat" value="iMelody, iMelody-1.2, midi, midi40, amr, mp3, rmf" />
+        <capability name="VideoFormat" value="mpeg-4, 3gpp" />
+        <capability name="HeapSize" value="16 MB" />
+        <capability name="DRM" value="OMA-Forward Lock" />
+        <capability name="usePolishTitle" value="true"/>
+        <capability name="CameraResolution" value="640x480"/>
+        <capability name="Network" value="GSM, GPRS, HSCSD"/>
+        <capability name="Frequency" value="900,1800,1900"/>
+        <capability name="Emulator.Skin" value="SonyEricsson_P900"/>
+        <capability name="key.LeftSoftKey" value="-7"/>
+        <capability name="key.RightSoftKey" value="-6"/>
+        <capability name="Bugs" value="fullScreenInPaint, drawRgbOrigin" />
+        <capability name="Font.small" value="15" />
+        <capability name="Font.medium" value="18" />
+        <capability name="Font.large" value="22" />
+    </device>
+
+    <device>
+        <identifier>Sony-Ericsson/P910, Sony-Ericsson/P910i, Sony-Ericsson/P910c, Sony-Ericsson/P910a</identifier>
+        <groups></groups>
+        <features>hasCamera, hasVideo, hasPointerEvents, hasCommandKeyEvents</features>
+        <capability name="ScreenSize" value="208x320"/>
+        <capability name="BitsPerPixel" value="18"/>
+        <capability name="JavaPackage" value="mmapi, wmapi, btapi" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="SoundFormat" value="iMelody, iMelody-1.2, midi, midi40, amr, mp3, rmf, au, wav" />
+        <capability name="VideoFormat" value="mpeg-4, 3gpp" />
+        <capability name="HeapSize" value="64 MB" />
+        <capability name="DRM" value="forward lock" />
+        <capability name="CameraZoom" value="0" />
+        <capability name="CameraResolution" value="1.3 MP" />
+        <capability name="Emulator.Skin" value="SonyEricsson_P910" />
+        <capability name="Bugs" value="fullScreenInPaint, NoSpriteRotation, DisplayGetColor, drawRgbOrigin" />
+        <capability name="Font.small" value="15" />
+        <capability name="Font.medium" value="18" />
+        <capability name="Font.large" value="22" />
+    </device>
+    
+<!-- Motorola devices -->
+
+    <device>
+        <identifier>Motorola/L6</identifier>
+        <capability name="OS" value="Motorola" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.1" />
+        <capability name="ScreenSize" value="128x160" />
+        <capability name="FullCanvasSize" value="128x149" />
+        <capability name="CanvasSize" value="128x131"/>
+        <capability name="BitsPerPixel" value="16" />
+        <capability name="HeapSize" value="800 kb" />
+        <capability name="MaxJarSize" value="100 kb" />
+        <capability name="MaxRecordStoreSize" value="64 kb" />
+        <capability name="JavaPackage" value="wmapi, mmapi" />
+        <capability name="ImageFormat" value="png, jpeg" />
+    </device>
+
+    <device>
+        <identifier>Motorola/C380</identifier>
+        <features>doubleBuffering</features>
+        <capability name="OS" value="Motorola" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="ScreenSize" value="128x128" />
+        <capability name="FullCanvasSize" value="128x116" />
+        <capability name="CanvasSize" value="128x96"/>
+        <capability name="BitsPerPixel" value="16" />
+        <capability name="HeapSize" value="800 kb" />
+        <capability name="StorageSize" value="1.8 MB" />
+        <capability name="MaxJarSize" value="100 kb" />
+        <capability name="MaxRecordStoreSize" value="64 kb" />
+        <capability name="JavaProtocol" value="udp, http, serial, socket" />
+        <capability name="MaxSockets" value="4" />
+        <capability name="JavaPackage" value="wmapi, mmapi" />
+        <capability name="ImageFormat" value="png, jpeg" />
+        <capability name="Emulator.Executable" value="${motorola.home}/EmulatorA.1/bin/emujava.exe" />
+        <capability name="Emulator.Arguments" value="${polish.jadPath};;-deviceFile;;${motorola.home}/EmulatorA.1/bin/Resources/C380.props" />
+    </device>
+    
+    <device>
+        <identifier>Motorola/A1000</identifier>
+        <features>doubleBuffering, hasPointerEvents, hasCamera</features>
+        <capability name="OS" value="Symbian 7.0/UIQ 2.1" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="ScreenSize" value="208x320" />
+        <capability name="BitsPerPixel" value="16" />
+        <capability name="HeapSize" value="16 MB" />
+        <capability name="StorageSize" value="24 MB" />
+        <capability name="MaxJarSize" value="24 MB" />
+        <capability name="MaxRecordStoreSize" value="24 MB" />
+        <capability name="JavaProtocol" value="udp, http, https, socket, server-socket, sms" />
+        <capability name="JavaPackage" value="wmapi, mmapi, bluetooth" />
+        <capability name="ImageFormat" value="png, jpeg" />
+        <capability name="SoundFormat" value="midi, mp3, wav, amr" />
+        <capability name="SoundFormat" value="mpeg-4" />
+        <capability name="Region" value="Europe, Middle-East, Asia-Pacific, Americas" />
+        <capability name="Network" value="GSM, UMTS" />
+        <capability name="Frequency" value="900, 1800, 1900, WCDMA 2100" />
+    </device>
+
+    <device>
+        <identifier>Motorola/E1000</identifier>
+        <features>doubleBuffering, hasPointerEvents, hasCamera</features>
+        <capability name="OS" value="Motorola" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.1" />
+        <capability name="ScreenSize" value="240x320" />
+        <capability name="FullCanvasSize" value="240x308" />
+        <capability name="CanvasSize" value="240x269" />
+        <capability name="BitsPerPixel" value="16" />
+        <capability name="HeapSize" value="1.5 MB" />
+        <capability name="StorageSize" value="24 MB" />
+        <capability name="MaxJarSize" value="200 kb" />
+        <capability name="MaxRecordStoreSize" value="512 kb" />
+        <capability name="JavaProtocol" value="udp, http, http1.1, https, tcp" />
+        <capability name="JavaPackage" value="wmapi, mmapi, 3d, pdaapi" />
+        <capability name="ImageFormat" value="png, jpeg, gif, bmp" />
+        <capability name="SoundFormat" value="midi, mp3, wav, amr, wb-amr, aac, wma, RealAudio, xmf, jts, mp4, iMelody" />
+        <capability name="SoundFormat" value="mpeg-4, h.263" />
+        <capability name="Region" value="Europe, Middle-East, Asia-Pacific, Americas" />
+        <capability name="Network" value="GSM, UMTS" />
+        <capability name="Frequency" value="900, 1800, 1900, WCDMA 2100" />
+        <capability name="key.LeftSoftKey" value="-21" />
+        <capability name="key.RightSoftKey" value="-22" />
+        <capability name="Emulator.Executable" value="${motorola.home}/EmulatorA.3/bin/jblend.exe" />
+        <capability name="Emulator.Arguments" value="-Xdescriptor:${polish.jadPath};;-Xdevice:E1000" />
+        <capability name="key.LeftSoftKey" value="-21" />
+        <capability name="key.RightSoftKey" value="-22" />
+    </device>
+
+    <device>
+        <identifier>Motorola/A845</identifier>
+        <features>doubleBuffering, hasCamera</features>
+        <capability name="OS" value="Motorola" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="ScreenSize" value="176x220" />
+        <capability name="FullCanvasSize" value="176x204" />
+        <capability name="CanvasSize" value="176x182" />
+        <capability name="BitsPerPixel" value="16" />
+        <capability name="HeapSize" value="800 kb" />
+        <capability name="StorageSize" value="5 MB" />
+        <capability name="MaxJarSize" value="100 kb" />
+        <capability name="MaxRecordStoreSize" value="64 kb" />
+        <capability name="JavaProtocol" value="udp, http, serial, socket" />
+        <capability name="MaxSockets" value="4" />
+        <capability name="JavaPackage" value="wmapi, mmapi, pdaapi, 3d" />
+        <capability name="ImageFormat" value="png, jpeg, gif, bmp, mpeg-4" />
+        <capability name="SoundFormat" value="midi, wav, amr, aac, mp3" />
+        <capability name="CameraResolution" value="vga" />
+        <capability name="Emulator.Executable" value="${motorola.home}/EmulatorA.1/bin/emujava.exe" />
+        <capability name="Emulator.Arguments" value="${polish.jadPath};;-deviceFile;;${motorola.home}/EmulatorA.1/bin/Resources/A845.props" />
+        <capability name="key.LeftSoftKey" value="-21" />
+        <capability name="key.RightSoftKey" value="-22" />
+        <capability name="key.MiddleSoftKey" value="-23" />
+    </device>   
+    
+    <device>
+        <identifier>Motorola/V500, Motorola/V525</identifier>
+        <features>doubleBuffering, hasCamera</features>
+        <capability name="OS" value="Motorola" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="ScreenSize" value="176x220" />
+        <capability name="FullCanvasSize" value="176x204" />
+        <capability name="CanvasSize" value="176x182" />
+        <capability name="BitsPerPixel" value="16" />
+        <capability name="HeapSize" value="800 kb" />
+        <capability name="StorageSize" value="5 MB" />
+        <capability name="MaxJarSize" value="100 kb" />
+        <capability name="MaxRecordStoreSize" value="64 kb" />
+        <capability name="JavaProtocol" value="udp, http, serial, socket" />
+        <capability name="MaxSockets" value="4" />
+        <capability name="MaxSockets.tcp" value="4" />
+        <capability name="MaxSockets.http" value="4" />
+        <capability name="MaxSockets.udp" value="4" />
+        <capability name="JavaPackage" value="wmapi, mmapi" />
+        <capability name="ImageFormat" value="png, jpeg" />
+        <capability name="SoundFormat" value="midi, wav, amr, mp3" />
+        <capability name="CameraResolution" value="vga" />
+        <capability name="CameraZoom" value="0" />
+        <capability name="DRM" value="Forward Lock" />
+        <capability name="Emulator.Executable" value="${motorola.home}/EmulatorA.1/bin/emujava.exe" />
+        <capability name="Emulator.Arguments" value="${polish.jadPath};;-deviceFile;;${motorola.home}/EmulatorA.1/bin/Resources/V300_V400_V500.props" />
+        <capability name="IconSize" value="15x15" />
+        <capability name="Bugs" value="dateFieldBroken" />
+        <capability name="key.LeftSoftKey" value="21" />
+        <capability name="key.RightSoftKey" value="22" />
+        <capability name="key.MiddleSoftKey" value="23" />
+    </device>
+    
+    <device>
+        <identifier>Motorola/A835</identifier>
+        <features>doubleBuffering</features>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="ScreenSize" value="176x220" />
+        <capability name="FullCanvasSize" value="176x220" />
+        <capability name="CanvasSize" value="176x203" />
+        <capability name="BitsPerPixel" value="16" />
+        <capability name="HeapSize" value="512 kb" />
+        <capability name="StorageSize" value="1 MB" />
+        <capability name="MaxJarSize" value="300 kb" /><!-- Recomended -->
+        <capability name="MaxRecordStoreSize" value="64 kb" />
+        <capability name="key.LeftSoftKey" value="-20" />
+        <capability name="key.RightSoftKey" value="-21" />
+    </device>
+
+    <device>
+        <identifier>Motorola/A925</identifier>
+        <features>doubleBuffering</features>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="ScreenSize" value="208x320" />
+        <capability name="FullCanvasSize" value="208x234" />
+        <capability name="CanvasSize" value="208x216" />
+        <capability name="BitsPerPixel" value="16" />
+        <capability name="HeapSize" value="512 kb" />
+        <capability name="StorageSize" value="1 MB" />
+        <capability name="MaxJarSize" value="300 kb" /><!-- Recomended -->
+        <capability name="key.LeftSoftKey" value="-10" />
+        <capability name="key.RightSoftKey" value="-11" />
+    </device>
+    
+    <device>
+        <identifier>Motorola/T720i</identifier>
+        <features>doubleBuffering, hasCamera</features>
+        <capability name="OS" value="Synergy" />
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="ScreenSize" value="120x160" />
+        <capability name="BitsPerPixel" value="12" />
+        <capability name="HeapSize" value="512 kb" />
+        <capability name="MaxJarSize" value="200 kb" />
+        <capability name="MaxRecordStoreSize" value="63 kb" />
+        <capability name="JavaProtocol" value="udp, http, socket" />
+        <capability name="JavaPackage" value="motorola-LWT, Look and Feel, Serial, Motorola-Camera, Motorola-MMS" />
+        <capability name="MaxSockets" value="4" />
+        <capability name="MaxSockets.tcp" value="3" />
+        <capability name="MaxSockets.http" value="3" />
+        <capability name="MaxSockets.udp" value="3" />
+        <capability name="ImageFormat" value="png" />
+    </device>
+
+    
+<!-- Nokia devices -->
+    <device>
+        <identifier>Nokia/E70</identifier>
+        <groups>Series60</groups>
+        <features></features>
+        <capability name="OS" value="Symbian OS v9.1"/>
+        <capability name="ScreenSize" value="352x416"/>
+        <capability name="FullCanvasSize" value="352x416"/>
+        <capability name="BitsPerPixel" value="18"/>
+        <capability name="JavaPackage" value="mmapi, wmapi"/>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.1" />
+        <capability name="VideoFormat" value="3gpp, h.263" />
+        <capability name="SoundFormat" value="midi, midi16, amr, nb-amr, nrt" />
+        <capability name="HeapSize" value="dynamic" />
+        <capability name="MaxJarSize" value="dynamic" />
+        <capability name="StorageSize" value="42 MB" />
+        <capability name="DRM" value="OMA Forward Lock" />
+    </device>
+
+    <device>
+        <identifier>Nokia/E61</identifier>
+        <groups>Series60</groups>
+        <features></features>
+        <capability name="OS" value="Symbian OS v9.1"/>
+        <capability name="ScreenSize" value="320x240"/>
+        <capability name="FullCanvasSize" value="320x240"/>
+        <capability name="BitsPerPixel" value="18"/>
+        <capability name="JavaPackage" value="mmapi, wmapi"/>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.1" />
+        <capability name="VideoFormat" value="3gpp, h.263" />
+        <capability name="SoundFormat" value="midi, midi16, amr, nb-amr, nrt" />
+        <capability name="HeapSize" value="dynamic" />
+        <capability name="MaxJarSize" value="dynamic" />
+        <capability name="StorageSize" value="42 MB" />
+        <capability name="DRM" value="OMA Forward Lock" />
+    </device>
+
+    <device>
+        <identifier>Nokia/N73</identifier>
+        <groups>Series60</groups>
+        <features></features>
+        <capability name="OS" value="Symbian OS v9.1"/>
+        <capability name="ScreenSize" value="240x320"/>
+        <capability name="FullCanvasSize" value="240x320"/>
+        <capability name="BitsPerPixel" value="18"/>
+        <capability name="JavaPackage" value="mmapi, wmapi"/>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.1" />
+        <capability name="VideoFormat" value="3gpp, h.263" />
+        <capability name="SoundFormat" value="midi, midi16, amr, nb-amr, nrt" />
+        <capability name="HeapSize" value="dynamic" />
+        <capability name="MaxJarSize" value="dynamic" />
+        <capability name="StorageSize" value="42 MB" />
+        <capability name="DRM" value="OMA Forward Lock" />
+    </device>
+
+    <device>
+        <identifier>Nokia/6131</identifier>
+        <groups>Series40</groups>
+        <features></features>
+        <capability name="OS" value="Nokia OS"/>
+        <capability name="ScreenSize" value="240x320"/>
+        <capability name="FullCanvasSize" value="240x320"/>
+        <capability name="BitsPerPixel" value="24"/>
+        <capability name="JavaPackage" value="mmapi, wmapi"/>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.1" />
+        <capability name="VideoFormat" value="3gpp, h.263" />
+        <capability name="SoundFormat" value="midi, midi16, amr, nb-amr, nrt" />
+        <capability name="HeapSize" value="dynamic" />
+        <capability name="MaxJarSize" value="1 MB" />
+        <capability name="StorageSize" value="11 MB" />
+        <capability name="DRM" value="OMA Forward Lock" />
+    </device>
+
+    <device>
+        <identifier>Nokia/6230</identifier>
+        <groups>Series40</groups>
+        <features></features>
+        <capability name="OS" value="Nokia OS"/>
+        <capability name="ScreenSize" value="128x128"/>
+        <capability name="CanvasSize" value="128x96"/>
+        <capability name="FullCanvasSize" value="128x128"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPackage" value="mmapi, wmapi"/>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.1" />
+        <capability name="VideoFormat" value="3gpp, h.263" />
+        <capability name="SoundFormat" value="midi, midi16, amr, nb-amr, nrt" />
+        <capability name="HeapSize" value="512 kb" />
+        <capability name="MaxJarSize" value="64 kb" />
+        <capability name="StorageSize" value="507 kb" />
+        <capability name="DRM" value="OMA Forward Lock" />
+        <capability name="Region" value="Europe, Africa, Asia-Pacific, Latin America" />
+        <capability name="Network" value="GSM, GPRS" />
+        <capability name="Frequence" value="900, 1800, 850, 1900" />
+        <capability name="AnnouncementDate" value="2005-03-01" />
+    </device>
+
+    <device>
+        <identifier>Nokia/6230i</identifier>
+        <groups>Series40</groups>
+        <features>hasCamera</features>
+        <capability name="OS" value="Nokia OS"/>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.1" />
+        <capability name="ScreenSize" value="208x208"/>
+        <capability name="CanvasSize" value="208x176"/>
+        <capability name="FullCanvasSize" value="208x208"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPackage" value="mmapi, wmapi, btapi, m3g, pdaapi" />
+        <capability name="VideoFormat" value="3gpp, h.263, mpeg-4" />
+        <capability name="SoundFormat" value="midi, midi64, amr, nb-amr, truetones, wb-amr, mp3, mp4, aac" />
+        <capability name="HeapSize" value="2 MB" />
+        <capability name="MaxJarSize" value="512kb" />
+        <capability name="StorageSize" value="32 MB" />
+        <capability name="DRM" value="OMA v1.0" />
+        <capability name="Region" value="Europe, Africa, Asia-Pacific, Americas" />
+        <capability name="Network" value="GSM, CSD, HSCSD, GPRS, EGPRS" />
+        <capability name="Frequence" value="900, 1800, 1900, 850" />
+        <capability name="CameraResolution" value="1.3 MP" />
+        <capability name="CameraZoom" value="3" />
+        <capability name="AnnouncementDate" value="2005-03-01" />
+    </device>
+    
+    <device>
+        <identifier>Nokia/6101</identifier>
+        <groups>Series40</groups>
+        <features>hasCamera</features>
+        <capability name="OS" value="Nokia OS"/>
+        <capability name="ScreenSize" value="128x160"/>
+        <capability name="ScreenSize" value="128x128"/>
+        <capability name="FullCanvasSize" value="128x160"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="ScreenSize" value="128x128"/>
+        <capability name="ClosedFlipScreenSize" value="96x65"/>
+        <capability name="JavaPackage" value="wmapi, mmapi, pdaapi" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.1" />
+        <capability name="VideoFormat" value="3gpp, h.263" />
+        <capability name="SoundFormat" value="midi, midi24, amr, nb-amr, truetones, wb-amr, mp3" />
+        <capability name="HeapSize" value="512 kb" />
+        <capability name="MaxJarSize" value="128 kb" />
+        <capability name="StorageSize" value="3.5 MB" />
+        <capability name="DRM" value="OMA v1.0" />
+        <capability name="Region" value=" Europe, Africa, Asia-Pacific, Americas" />
+        <capability name="Network" value="GSM, CSD, HSCSD, GPRS, EGPRS" />
+        <capability name="Frequence" value="900,1800,1900,850" />
+        <capability name="CameraResolution" value="vga" />
+        <capability name="CameraZoom" value="1" />
+        <capability name="AnnouncementDate" value="2005-02-14" />
+    </device>
+
+    <device>
+        <identifier>Nokia/7710</identifier>
+        <groups></groups>
+        <features>hasCamera, hasPointerEvents</features>
+        <capability name="OS" value="Symbian OS 7.0s"/>
+        <capability name="ScreenSize" value="640x320"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPackage" value="nokia-ui, mmapi, wmapi, btapi" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.1" />
+        <capability name="VideoFormat" value="3gpp, h.263, mpeg-4, realvideo" />
+        <capability name="SoundFormat" value="midi, midi24, amr, nb-amr, wav, mp3, realaudio, aac" />
+        <capability name="HeapSize" value="dynamic" />
+        <capability name="MaxJarSize" value="dynamic" />
+        <capability name="StorageSize" value="80 MB" />
+        <capability name="DRM" value="OMA Forward Lock" />
+        <capability name="Region" value="Europe, Asia-Pacific, China" />
+        <capability name="Network" value="GSM, HSCSD, GPRS, EGPRS" />
+        <capability name="Frequence" value="900,1800,1900" />
+        <capability name="CameraResolution" value="1 MP" />
+        <capability name="CameraZoom" value="1" />
+        <capability name="AnnouncementDate" value="2004-11-04" />
+    </device>
+
+    <device>
+        <identifier>Nokia/5140</identifier>
+        <groups>Series40</groups>
+        <features>hasCamera</features>
+        <capability name="ScreenSize" value="128x128"/>
+        <capability name="CanvasSize" value="128x96"/>
+        <capability name="FullCanvasSize" value="128x128"/>
+        <capability name="BitsPerPixel" value="12"/>
+        <capability name="JavaPackage" value="mmapi, wmapi"/>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.1" />
+        <capability name="SoundFormat" value="ott" />
+        <capability name="HeapSize" value="500 kb" />
+        <capability name="MaxJarSize" value="125 kb" />
+    </device>
+
+    <device>
+        <identifier>Nokia/6170</identifier>
+        <groups>Series40</groups>
+        <features>hasCamera</features>
+        <capability name="ScreenSize" value="128x160"/>
+        <capability name="ScreenSize" value="128x128"/>
+        <capability name="FullCanvasSize" value="128x160"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPackage" value="mmapi, wmapi"/>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.1" />
+        <capability name="VideoFormat" value="3gpp, h.263, mpeg-4" />
+        <capability name="SoundFormat" value="midi, midi40, amr, nb-amr" />
+        <capability name="HeapSize" value="512 kb" />
+        <capability name="MaxJarSize" value="128kb" />
+        <capability name="DRM" value="OMA v1.0" />
+        <capability name="Region" value="Europe, Africa, Americas, Asia-Pacific" />
+        <capability name="CameraResolution" value="vga" />
+        <capability name="CameraZoom" value="0" />
+    </device>
+
+    <device>
+        <identifier>Nokia/6600</identifier>
+        <groups>Series60</groups>
+        <features>hasCamera</features>
+        <capability name="OS" value="Symbian OS 7.0s"/>
+        <capability name="ScreenSize" value="176x208"/>
+        <capability name="ScreenSize" value="176x144"/>
+        <capability name="FullCanvasSize" value="176x208"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPackage" value="mmapi, wmapi, btapi" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="VideoFormat" value="3gpp, mpeg-4, realvideo" />
+        <capability name="SoundFormat" value="midi, midi24, true tones, amr, wb-amr" />
+        <capability name="HeapSize" value="3mb" />
+        <capability name="MaxJarSize" value="dynamic" />
+        <capability name="CameraResolution" value="vga" />
+        <capability name="CameraZoom" value="2" />
+        <capability name="Font.small" value="15" />
+        <capability name="Font.medium" value="16" />
+        <capability name="Font.large" value="21" />
+    </device>
+
+    <device>
+        <identifier>Nokia/N-Gage</identifier>
+        <groups>Series60</groups>
+        <features>hasCamera</features>
+        <capability name="OS" value="Symbian OS 6.1"/>
+        <capability name="ScreenSize" value="176x208"/>
+        <capability name="ScreenSize" value="176x144"/>
+        <capability name="FullCanvasSize" value="176x208"/>
+        <capability name="BitsPerPixel" value="12"/>
+        <capability name="JavaPackage" value="mmapi, wmapi" />
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="VideoFormat" value="3gpp" />
+        <capability name="SoundFormat" value="midi, amr" />
+        <capability name="HeapSize" value="dynamic" />
+        <capability name="MaxJarSize" value="4mb" />
+        <capability name="CameraResolution" value="vga" />
+        <capability name="CameraZoom" value="0" />
+        <capability name="Bugs" value="dateFieldAcceptsNoNullDate" />
+    </device>
+        
+    <device>
+        <identifier>Nokia/3650</identifier>
+        <groups>Series60</groups>
+        <features>hasCamera</features>
+        <capability name="OS" value="Symbian OS 6.1"/>
+        <capability name="ScreenSize" value="176x208"/>
+        <capability name="ScreenSize" value="176x144"/>
+        <capability name="FullCanvasSize" value="176x208"/>
+        <capability name="BitsPerPixel" value="12"/>
+        <capability name="JavaPackage" value="mmapi, wmapi" />
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="VideoFormat" value="3gpp" />
+        <capability name="SoundFormat" value="midi, amr" />
+        <capability name="HeapSize" value="dynamic" />
+        <capability name="MaxJarSize" value="4mb" />
+        <capability name="CameraResolution" value="vga" />
+        <capability name="CameraZoom" value="0" />
+        <capability name="Bugs" value="dateFieldAcceptsNoNullDate" />
+    </device>
+    
+    <device>
+        <identifier>Nokia/7650</identifier>
+        <groups>Series60</groups>
+        <features>hasCamera</features>
+        <capability name="OS" value="Symbian OS 6.1"/>
+        <capability name="ScreenSize" value="176x208"/>
+        <capability name="ScreenSize" value="176x144"/>
+        <capability name="FullCanvasSize" value="176x208"/>
+        <capability name="BitsPerPixel" value="12"/>
+        <capability name="JavaPackage" value="mmapi"/>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="SoundFormat" value="wav, true tones" />
+        <capability name="HeapSize" value="dynamic" />
+        <capability name="MaxJarSize" value="4mb" />
+        <capability name="CameraResolution" value="vga" />
+        <capability name="CameraZoom" value="0" />
+        <capability name="Bugs" value="dateFieldAcceptsNoNullDate" />
+    </device>
+    
+    <device>
+        <identifier>Nokia/9500</identifier>
+        <groups>Series80</groups>
+        <features>hasCamera, noBlueToothObex</features>
+        <capability name="OS" value="Symbian OS 7.0s"/>
+        <capability name="ScreenSize" value="640x200"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPackage" value="mmapi, wmapi, btapi, pda-api" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="VideoFormat" value="3gpp,  mpeg-4, RealVideo" />
+        <capability name="SoundFormat" value="midi, midi24, amr, nb-amr, wav, mp3, aac" />
+        <capability name="HeapSize" value="20mb" />
+        <capability name="MaxJarSize" value="dynamic" />
+        <capability name="CameraResolution" value="vga" />
+        <capability name="CameraZoom" value="0" />
+        <capability name="Region" value="Europe, Africa, Asia-Pacific, Americas" />
+        <capability name="Network" value="GSM" />
+        <capability name="Frequency" value="850, 1800, 1900" />
+        <capability name="DRM" value="OMA forward lock" />
+    </device>
+    
+    <device>
+        <identifier>Nokia/7700</identifier>
+        <groups>Series90</groups>
+        <features>hasCamera</features>
+        <capability name="OS" value="Symbian OS 7.0s"/>
+        <capability name="ScreenSize" value="640x320"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPackage" value="mmapi, wmapi, btapi" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="VideoFormat" value="3gpp, mpeg-4, RealVideo" />
+        <capability name="SoundFormat" value="midi, amr, wav, mp3, aac, RealAudio" />
+        <capability name="HeapSize" value="dynamic" />
+        <capability name="MaxJarSize" value="dynamic" />
+        <capability name="CameraResolution" value="vga" />
+        <capability name="CameraZoom" value="0" />
+    </device>
+    
+    <device>
+        <identifier>Nokia/3510i</identifier>
+        <groups>Series40</groups>
+        <capability name="ScreenSize" value="96x65"/>
+        <capability name="FullCanvasSize" value="96x65"/>
+        <capability name="BitsPerPixel" value="12"/>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="SoundFormat" value="midi" />
+        <capability name="HeapSize" value="200kb" />
+        <capability name="MaxJarSize" value="64kb" />
+        <capability name="Emulator.Class" value="GenericEmulator" />
+        <capability name="Emulator.Executable" value="java" />  
+        <capability name="Emulator.Arguments" value="-Demulator.home=${nokia.home}\Devices\Nokia_3510i_MIDP_SDK_v1_0;;-classpath;;${nokia.home}\Devices\Nokia_3510i_MIDP_SDK_v1_0\tools\emulator.jar;${nokia.home}\Devices\Nokia_3510i_MIDP_SDK_v1_0\lib\classes.zip;${polish.jarPath};;com.nokia.phone.sdk.Emulator;;-Xdescriptor;;${polish.jadPath}" />
+        <capability name="Emulator.Skin" value="Nokia_3510i_MIDP_SDK_v1_0" />   
+    </device>
+    
+    <device>
+        <identifier>Nokia/7250</identifier>
+        <groups>Series40</groups>
+        <capability name="ScreenSize" value="128x128"/>
+        <capability name="CanvasSize" value="128x96"/>
+        <capability name="FullCanvasSize" value="128x128"/>
+        <capability name="BitsPerPixel" value="12"/>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="SoundFormat" value="midi" />
+        <capability name="HeapSize" value="200kb" />
+        <capability name="MaxJarSize" value="64kb" />
+        <capability name="Emulator.Class" value="NokiaEmulator" />
+        <capability name="Emulator.Skin" value="Nokia_7210_MIDP_SDK_v1_0" />    
+    </device>
+
+    <device>
+        <identifier>Nokia/3100</identifier>
+        <groups>Series40</groups>
+        <capability name="ScreenSize" value="128x128"/>
+        <capability name="CanvasSize" value="128x96"/>
+        <capability name="FullCanvasSize" value="128x128"/>
+        <capability name="BitsPerPixel" value="12"/>
+        <capability name="JavaPackage" value="wmapi" />
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="SoundFormat" value="midi" />
+        <capability name="HeapSize" value="205kb" />
+        <capability name="MaxJarSize" value="63kb" />   
+    </device>
+
+    
+<!-- Siemens devices -->
+    <device
+        supportsPolishGui="true">
+        <identifier>Siemens/CF75</identifier>
+        <features>hasCommandKeyEvents</features>
+        <capability name="ScreenSize" value="128x160"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPackage" value="wmapi, mmapi, location-api" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.1" />
+        <capability name="SoundFormat" value="midi, midi-0, midi-1, midi40, wav, amr" />
+        <capability name="HeapSize" value="1.5MB" />
+    </device>
+
+    <device
+        supportsPolishGui="true">
+        <identifier>Siemens/C65</identifier>
+        <features>hasCommandKeyEvents</features>
+        <capability name="ScreenSize" value="130x130"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPackage" value="wmapi, mmapi, location-api" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.1" />
+        <capability name="SoundFormat" value="midi, midi-0, midi-1, midi40, wav, amr" />
+        <capability name="HeapSize" value="1.5MB" />
+        <capability name="MaxJarSize" value="350kb" />
+        <capability name="StorageSize" value="11MB" />
+        <capability name="DRM" value="OMA-Forward Lock, Separate Delivery, Combined Delivery" />
+        <capability name="Bugs" value="layerManagerSetViewWindow" />    
+    </device>
+    
+    <device
+        supportsPolishGui="true">
+        <identifier>Siemens/M55, Siemens/M56</identifier>
+        <capability name="ScreenSize" value="101x80"/>
+        <capability name="BitsPerPixel" value="12"/>
+        <capability name="JavaPackage" value="siemens-game-api, siemens-color-game-api, siemens-m55-led-api, siemens-extension-api" />
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="SoundFormat" value="midi, midi-0, midi-1, midi16, wav" />
+        <capability name="MaxJarSize" value="70kb" />
+        <capability name="MaxObjectSize" value="16kb" />        
+        <capability name="HeapSize" value="560 kb" />
+        <capability name="StorageSize" value="1.6 MB" />
+        <capability name="DRM" value="OMA-Forward Lock, Separate Delivery, Combined Delivery" />
+        <capability name="Emulator.Skin" value="M55" />
+        <capability name="Bugs" value="layerManagerSetViewWindow" />    
+    </device>
+    
+    <device
+        supportsPolishGui="true">
+        <identifier>Siemens/M65</identifier>
+        <features>hasCommandKeyEvents</features>
+        <capability name="ScreenSize" value="132x176"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPackage" value="wmapi, mmapi, location-api" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.1" />
+        <capability name="SoundFormat" value="midi, midi-0, midi-1, midi40, wav, amr" />
+        <capability name="VideoFormat" value="h263" />
+        <capability name="MaxJarSize" value="350kb" />
+        <capability name="HeapSize" value="1.5 MB" />
+        <capability name="StorageSize" value="11 MB" />
+        <capability name="DRM" value="OMA-Forward Lock, Separate Delivery, Combined Delivery" />
+        <capability name="key.LeftSoftKey" value="-1" />
+        <capability name="key.RightSoftKey" value="-4" />
+        <capability name="Bugs" value="layerManagerSetViewWindow" />    
+    </device>
+
+    <device
+        supportsPolishGui="true">
+        <identifier>Siemens/MC60</identifier>
+        <capability name="ScreenSize" value="101x80"/>
+        <capability name="BitsPerPixel" value="12"/>
+        <capability name="JavaPackage" value="siemens-game-api, siemens-color-game-api, siemens-bmp-encoding-api, siemens-extension-api" />
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="SoundFormat" value="midi, midi-0, midi-1, midi16, wav" />
+        <capability name="MaxJarSize" value="70kb" />
+        <capability name="MaxObjectSize" value="16kb" />        
+        <capability name="HeapSize" value="760 kb" />
+        <capability name="StorageSize" value="1.8 MB" />
+        <capability name="DRM" value="OMA-Forward Lock, Separate Delivery, Combined Delivery" />
+        <capability name="Bugs" value="layerManagerSetViewWindow" />    
+    </device>
+
+    <device>
+        <identifier>Siemens/S55, Siemens/S56, Siemens/S57</identifier>
+        <capability name="ScreenSize" value="101x80"/>
+        <capability name="BitsPerPixel" value="8"/>
+        <capability name="JavaPackage" value="siemens-game-api, siemens-color-game-api, siemens-bmp-encoding-api, siemens-extension-api" />
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="SoundFormat" value="midi, midi-0, midi-1, midi16, smaf" />
+        <capability name="MaxJarSize" value="70kb" />
+        <capability name="MaxObjectSize" value="16kb" />        
+        <capability name="HeapSize" value="365 kb" />
+        <capability name="StorageSize" value="1 MB" />
+        <capability name="DRM" value="OMA-Forward Lock, Separate Delivery, Combined Delivery" />
+        <capability name="Bugs" value="layerManagerSetViewWindow" />    
+    </device>
+    
+    <device 
+        supportsPolishGui="true">
+        <identifier>Siemens/SX1</identifier>
+        <capability name="OS" value="Symbian"/>
+        <capability name="ScreenSize" value="176x220"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="JavaPackage" value="siemens-color-game-api, mmapi, wmapi, nokia-ui, btapi" />
+        <capability name="SoundFormat" value="midi, midi-0, midi-1, midi40, amr" />
+        <capability name="VideoFormat" value="3gpp" />
+        <capability name="StorageSize" value="2 MB" />
+        <capability name="MaxJarSize" value="dynamic" />
+        <capability name="DRM" value="OMA-Forward Lock, Separate Delivery, Combined Delivery" />
+    </device>
+    
+<!-- Alcatel devices -->
+    <device>
+        <identifier>Alcatel/One Touch 735i</identifier>
+        <capability name="ScreenSize" value="128x128"/>
+        <capability name="BitsPerPixel" value="12"/>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="JavaPackage" value="wmapi" />
+        <capability name="MaxJarSize" value="128 kb" />
+        <capability name="StorageSize" value="1.5 MB" />
+        <capability name="ImageFormat" value="png, gif, jpg, agif, bmp" />
+        <capability name="SoundFormat" value="midi, sp-midi, iMelody, amr" />
+    </device>
+
+    <device>
+        <identifier>Alcatel/One Touch 756</identifier>
+        <capability name="ScreenSize" value="128x160"/>
+        <capability name="BitsPerPixel" value="18"/>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="JavaPackage" value="wmapi-1.1, mmapi, mmapi" />
+    </device>
+    
+<!-- Casio devices -->
+    <device>
+        <identifier>Casio/C452CA</identifier>
+        <capability name="ScreenSize" value="120x133"/>
+        <capability name="BitsPerPixel" value="8"/>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+    </device>
+
+<!-- Hitachi devices -->
+    <device>
+        <identifier>Hitachi/C3001H</identifier>
+        <capability name="ScreenSize" value="120x162"/>
+        <capability name="BitsPerPixel" value="12"/>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+    </device>
+
+<!-- Kyocera devices -->
+    <device>
+        <identifier>Kyocera/C3002K</identifier>
+        <capability name="ScreenSize" value="120x160"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+    </device>
+
+<!-- LG Electronics devices -->
+    <device>
+        <identifier>LG/G1600</identifier>
+        <groups>LG-UI</groups>
+        <capability name="ScreenSize" value="128x128"/>
+        <capability name="CanvasSize" value="128x110"/>
+        <capability name="FullCanvasSize" value="128x128"/> 
+        <capability name="MenuBarHeight" value="18" /> 
+        <capability name="BitsPerPixel" value="8"/>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="SoundFormat" value="mmf" /> 
+        <capability name="ImageFormat" value="png" />
+        <capability name="HeapSize" value="256 kb" />
+        <capability name="MaxJarSize" value="64 kb" /> 
+    </device>
+
+    <device>
+        <identifier>LG/C1100</identifier>
+        <groups>LG-UI</groups>
+        <capability name="ScreenSize" value="128x128"/>
+        <capability name="CanvasSize" value="128x110"/>
+        <capability name="FullCanvasSize" value="128x128"/> 
+        <capability name="MenuBarHeight" value="18" /> 
+        <capability name="BitsPerPixel" value="8"/>
+        <capability name="JavaPackage" value="wmapi" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="SoundFormat" value="mmf" /> 
+        <capability name="ImageFormat" value="png" />
+        <capability name="HeapSize" value="500 kb" />
+        <capability name="MaxJarSize" value="64 kb" /> 
+    </device>
+
+    <device>
+        <identifier>LG/F1200</identifier>
+        <groups>LG-UI</groups>
+        <capability name="ScreenSize" value="128x160"/>
+        <capability name="CanvasSize" value="128x142"/>
+        <capability name="FullCanvasSize" value="128x160"/> 
+        <capability name="MenuBarHeight" value="18" /> 
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPackage" value="wmapi" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="SoundFormat" value="mmf" /> 
+        <capability name="ImageFormat" value="png" />
+        <capability name="HeapSize" value="500 kb" />
+        <capability name="MaxJarSize" value="64 kb" /> 
+    </device>
+
+    <device>
+        <identifier>LG/U8110</identifier>
+        <capability name="ScreenSize" value="176x220"/>
+        <capability name="CanvasSize" value="176x199"/> 
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPackage" value="wmapi" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="HeapSize" value="1 MB" />
+    </device>
+
+    <device>
+        <identifier>LG/KG225</identifier>
+        <capability name="ScreenSize" value="128x128"/>
+        <capability name="CanvasSize" value="176x199"/>
+        <capability name="FullCanvasSize" value="128x128"/> 
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPackage" value="wmapi" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.1" />
+        <capability name="HeapSize" value="1.1 MB" />
+    </device>
+
+    <device>
+        <identifier>LG/F2100</identifier>
+        <groups>LG-UI</groups>
+        <capability name="ScreenSize" value="128x160"/>
+        <capability name="CanvasSize" value="128x142"/>
+        <capability name="FullCanvasSize" value="128x160"/> 
+        <capability name="MenuBarHeight" value="18" /> 
+        <capability name="BitsPerPixel" value="8"/>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="SoundFormat" value="mmf" /> 
+        <capability name="ImageFormat" value="png" />
+        <capability name="HeapSize" value="700 kb" />
+        <capability name="MaxJarSize" value="100 kb" /> 
+    </device>
+
+<!-- Mitsubishi devices -->
+    <device>
+        <identifier>Mitsubishi/J-D05</identifier>
+        <capability name="BitsPerPixel" value="12"/>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+    </device>
+
+<!-- Panasonic devices -->
+    <device>
+        <identifier>Panasonic/C3003P</identifier>
+        <capability name="ScreenSize" value="132x176"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+    </device>
+    
+<!-- Research In Motion devices -->
+    <device>
+        <identifier>Research In Motion/BlackBerry 5810</identifier>
+        <capability name="ScreenSize" value="160x160"/>
+        <capability name="BitsPerPixel" value="1"/>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+    </device>
+
+    <device>
+        <identifier>Research In Motion/BlackBerry 5820</identifier>
+        <capability name="ScreenSize" value="160x160"/>
+        <capability name="BitsPerPixel" value="1"/>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+    </device>
+
+<!-- Samsung devices -->
+
+    <device> 
+        <identifier>Samsung/Z100</identifier> 
+        <groups>Samsung-UI</groups>
+        <features>hasCommandKeys</features> 
+        <capability name="ScreenSize" value="176x177"/> 
+        <capability name="FullCanvasSize" value="176x177"/> 
+        <capability name="CanvasSize" value="176x161"/> 
+        <capability name="MenuBarHeight" value="16" /> 
+        <capability name="BitsPerPixel" value="18"/> 
+        <capability name="JavaPlatform" value="MIDP/2.0" /> 
+        <capability name="JavaConfiguration" value="CLDC/1.0.4" /> 
+        <capability name="SoundFormat" value="midi, mmf" /> 
+        <capability name="PolyphonicVoices" value="40" /> 
+        <capability name="ImageFormat" value="png" />
+        <capability name="HeapSize" value="700 kb" />
+        <capability name="MaxJarSize" value="250 kb" /> 
+        <capability name="Network" value="UMTS" /> 
+        <capability name="Region" value="Europe, CIS" /> 
+    </device> 
+
+    <device>
+        <identifier>Samsung/D600</identifier>
+        <groups>Samsung-UI</groups> 
+        <features>hasCommandKeys</features> 
+        <capability name="ScreenSize" value="240x320"/> 
+        <capability name="FullCanvasSize" value="240x320"/>
+        <capability name="CanvasSize" value="240x286"/> 
+        <capability name="MenuBarHeight" value="34" /> 
+        <capability name="BitsPerPixel" value="16"/> 
+        <capability name="JavaPlatform" value="MIDP/2.0" /> 
+        <capability name="JavaConfiguration" value="CLDC/1.1" /> 
+        <capability name="SoundFormat" value="midi" /><!-- NB only MIDI supported --> 
+        <capability name="PolyphonicVoices" value="64" /> 
+        <capability name="ImageFormat" value="png" /> 
+        <capability name="HeapSize" value="2 MB" /> 
+        <capability name="MaxJarSize" value="500 kb" /> 
+        <capability name="Network" value="UMTS" /> 
+        <capability name="Region" value="Europe, CIS" /> 
+    </device>
+ 
+    <device>
+        <!-- Icon size 24x24 --> 
+        <identifier>Samsung/Z500</identifier>
+        <groups>Samsung-UI</groups> 
+        <features>hasCommandKeys</features> 
+        <capability name="ScreenSize" value="176x220"/> 
+        <capability name="FullCanvasSize" value="176x205"/> 
+        <capability name="CanvasSize" value="176x189"/> 
+        <capability name="MenuBarHeight" value="16" /> 
+        <capability name="BitsPerPixel" value="16"/> 
+        <capability name="JavaPlatform" value="MIDP/2.0" /> 
+        <capability name="JavaConfiguration" value="CLDC/1.1" /> 
+        <capability name="SoundFormat" value="midi" /><!-- NB only MIDI supported --> 
+        <capability name="PolyphonicVoices" value="64" /> 
+        <capability name="ImageFormat" value="png" /> 
+        <capability name="HeapSize" value="2 MB" /> 
+        <capability name="MaxJarSize" value="500 kb" /> 
+        <capability name="Network" value="UMTS" /> 
+        <capability name="Region" value="Europe, CIS" /> 
+    </device>
+ 
+    <device> 
+        <identifier>Samsung/D410</identifier> 
+        <groups>Samsung-UI</groups>
+        <features>hasCommandKeys</features> 
+        <capability name="ScreenSize" value="176x220"/> 
+        <capability name="FullCanvasSize" value="176x220"/> 
+        <capability name="CanvasSize" value="176x204"/> 
+        <capability name="MenuBarHeight" value="16" /> 
+        <capability name="BitsPerPixel" value="18"/> 
+        <capability name="JavaPlatform" value="MIDP/2.0" /> 
+        <capability name="JavaConfiguration" value="CLDC/1.0" /> 
+        <capability name="SoundFormat" value="midi, midi64" /> 
+        <capability name="PolyphonicVoices" value="64" /> 
+        <capability name="ImageFormat" value="png" /> 
+        <capability name="HeapSize" value="256 kb" /> 
+        <capability name="MaxJarSize" value="170 kb" /> 
+        <capability name="Network" value="GPRS" /> 
+        <capability name="Region" value="Europe, CIS" /> 
+    </device> 
+ 
+    <device> 
+        <identifier>Samsung/E710</identifier>
+        <groups>Samsung-UI</groups> 
+        <features>hasCommandKeys</features> 
+        <capability name="ScreenSize" value="128x160"/> 
+        <capability name="FullCanvasSize" value="128x160"/> 
+        <capability name="CanvasSize" value="128x144"/> 
+        <capability name="MenuBarHeight" value="16" /> 
+        <capability name="BitsPerPixel" value="16"/> 
+        <capability name="JavaPlatform" value="MIDP/2.0" /> 
+        <capability name="JavaConfiguration" value="CLDC/1.0" /> 
+        <capability name="SoundFormat" value="ma3" /> 
+        <capability name="PolyphonicVoices" value="40" /> 
+        <capability name="ImageFormat" value="png" /> 
+        <capability name="HeapSize" value="256 kb" /> 
+        <capability name="MaxJarSize" value="100 kb" /> 
+        <capability name="Network" value="GPRS" /> 
+        <capability name="Region" value="Europe" /> 
+        <capability name="Bugs" value="inaccessibleFirstRow" />
+    </device> 
+
+    <device> 
+        <identifier>Samsung/E350</identifier> 
+        <groups>Samsung-UI</groups>
+        <capability name="ScreenSize" value="128x160"/> 
+        <capability name="FullCanvasSize" value="128x160"/> 
+        <capability name="CanvasSize" value="128x144"/> 
+        <capability name="MenuBarHeight" value="16" /> 
+        <capability name="BitsPerPixel" value="16"/> 
+        <capability name="JavaPlatform" value="MIDP/2.0" /> 
+        <capability name="JavaConfiguration" value="CLDC/1.1" /> 
+        <capability name="SoundFormat" value="midi, mmf" /> 
+        <capability name="PolyphonicVoices" value="40" /> 
+        <capability name="ImageFormat" value="png" /> 
+        <capability name="HeapSize" value="1.1 MB" /> 
+        <capability name="MaxJarSize" value="300 kb" /> 
+    </device>
+
+    <device> 
+        <identifier>Samsung/X450</identifier> 
+        <groups>Samsung-UI</groups>
+        <capability name="ScreenSize" value="128x160"/> 
+        <capability name="FullCanvasSize" value="128x160"/> 
+        <capability name="CanvasSize" value="128x144"/> 
+        <capability name="MenuBarHeight" value="16" /> 
+        <capability name="BitsPerPixel" value="16"/> 
+        <capability name="JavaPlatform" value="MIDP/2.0" /> 
+        <capability name="JavaConfiguration" value="CLDC/1.0" /> 
+        <capability name="SoundFormat" value="midi, midi40" /> 
+        <capability name="PolyphonicVoices" value="40" /> 
+        <capability name="ImageFormat" value="png" /> 
+        <capability name="HeapSize" value="256 kb" /> 
+        <capability name="MaxJarSize" value="100 kb" /> 
+        <capability name="Network" value="GPRS" /> 
+        <capability name="Region" value="Europe, CIS" /> 
+        <capability name="Bugs" value="inaccessibleFirstRow" />
+    </device> 
+
+    <device> 
+        <identifier>Samsung/C100</identifier> 
+        <groups>Samsung-UI</groups>
+        <capability name="ScreenSize" value="128x128"/> 
+        <capability name="FullCanvasSize" value="128x128"/> 
+        <capability name="CanvasSize" value="128x112"/> 
+        <capability name="MenuBarHeight" value="16" /> 
+        <capability name="BitsPerPixel" value="16"/> 
+        <capability name="JavaPlatform" value="MIDP/1.0" /> 
+        <capability name="JavaConfiguration" value="CLDC/1.0" /> 
+        <capability name="SoundFormat" value="midi, midi40" /> 
+        <capability name="PolyphonicVoices" value="40" /> 
+        <capability name="ImageFormat" value="png" /> 
+        <capability name="HeapSize" value="300 kb" /> 
+        <capability name="MaxJarSize" value="100 kb" /> 
+        <capability name="Network" value="GPRS" /> 
+        <capability name="Region" value="Europe, CIS, South Africa, South East Asia" /> 
+    </device> 
+
+    <device> 
+        <identifier>Samsung/C200</identifier> 
+        <groups>Samsung-UI</groups>
+        <capability name="ScreenSize" value="128x128"/> 
+        <capability name="FullCanvasSize" value="128x128"/> 
+        <capability name="CanvasSize" value="128x110"/> 
+        <capability name="MenuBarHeight" value="16" /> 
+        <capability name="BitsPerPixel" value="16"/> 
+        <capability name="JavaPlatform" value="MIDP/2.0" /> 
+        <capability name="JavaConfiguration" value="CLDC/1.0" /> 
+        <capability name="SoundFormat" value="midi, midi40, mmf" /> 
+        <capability name="PolyphonicVoices" value="40" /> 
+        <capability name="ImageFormat" value="png" /> 
+        <capability name="HeapSize" value="256 kb" /> 
+        <capability name="MaxJarSize" value="100 kb" /> 
+        <capability name="Network" value="GPRS" /> 
+        <capability name="Region" value="Europe, CIS" /> 
+    </device>  
+ 
+    <device> 
+        <identifier>Samsung/S300</identifier>
+        <groups>Samsung-UI</groups> 
+        <features>hasCommandKeys</features> 
+        <capability name="ScreenSize" value="128x128"/> 
+        <capability name="FullCanvasSize" value="128x128"/> 
+        <capability name="CanvasSize" value="128x112"/> 
+        <capability name="MenuBarHeight" value="16" /> 
+        <capability name="BitsPerPixel" value="16"/> 
+        <capability name="JavaPlatform" value="MIDP/1.0" /> 
+        <capability name="JavaConfiguration" value="CLDC/1.0" /> 
+        <capability name="SoundFormat" value="ma3" /> 
+        <capability name="PolyphonicVoices" value="40" /> 
+        <capability name="ImageFormat" value="png" /> 
+        <capability name="HeapSize" value="180 kb" /> 
+        <capability name="MaxJarSize" value="100 kb" /> 
+        <capability name="Network" value="GPRS" /> 
+        <capability name="Region" value="Europe, CIS, South Africa, South East Asia" /> 
+    </device> 
+  
+     <device> 
+        <identifier>Samsung/SGH-D500</identifier>
+        <groups>Samsung-UI</groups> 
+        <features>hasCommandKeys, hasCamera</features> 
+        <capability name="ScreenSize" value="176x220"/> 
+        <capability name="FullCanvasSize" value="176x220"/> 
+        <capability name="MenuBarHeight" value="23" /> 
+        <capability name="BitsPerPixel" value="18"/> 
+        <capability name="JavaPlatform" value="MIDP/2.0" /> 
+        <capability name="JavaConfiguration" value="CLDC/1.1" /> 
+        <capability name="JavaPackage" value="wmapi, mmapi" /> 
+        <capability name="SoundFormat" value="mmf, midi, midi64, wav" /> 
+        <capability name="PolyphonicVoices" value="64" /> 
+        <capability name="ImageFormat" value="png" /> 
+        <capability name="HeapSize" value="560 kb" /> 
+        <capability name="MaxJarSize" value="300 kb" /> 
+        <capability name="StorageSize" value="80 MB" /> 
+        <capability name="Network" value="GSM, GPRS" /> 
+        <capability name="Frequency" value="900, 1800, 1900" /> 
+        <capability name="CameraResolution" value="1.3 MP" /> 
+    </device> 
+ 
+    <device> 
+        <identifier>Samsung/SGH-E700</identifier> 
+        <groups>Samsung-UI</groups> 
+        <capability name="ScreenSize" value="128x160"/> 
+        <capability name="CanvasSize" value="128x140"/> 
+        <capability name="FullCanvasSize" value="128x160"/> 
+        <capability name="MenuBarHeight" value="20" /> 
+        <capability name="BitsPerPixel" value="16"/> 
+        <capability name="JavaPlatform" value="MIDP/1.0" /> 
+        <capability name="JavaConfiguration" value="CLDC/1.0" /> 
+        <capability name="SoundFormat" value="mmf" /> 
+        <capability name="PolyphonicVoices" value="40" /> 
+        <capability name="ImageFormat" value="png" /> 
+        <capability name="HeapSize" value="480 kb" /> 
+        <capability name="MaxJarSize" value="100 kb" /> 
+        <capability name="Region" value="Europe, CIS, South Africa, SE Asia" /> 
+        <capability name="Network" value="GSM, GPRS" /> 
+        <capability name="Frequency" value="900, 1800, 1900" /> 
+        <capability name="Bugs" value="inaccessibleFirstRow, umlautsInSmallFont" />
+        <capability name="Font.small" value="8" />
+        <capability name="Font.medium" value="12" />
+        <capability name="Font.large" value="16" />
+    </device> 
+ 
+    <device> 
+        <identifier>Samsung/SGH-X100</identifier> 
+        <groups>Samsung-UI</groups> 
+        <capability name="ScreenSize" value="128x128"/> 
+        <capability name="FullCanvasSize" value="128x128"/> 
+        <capability name="MenuBarHeight" value="18" /> 
+        <capability name="BitsPerPixel" value="16"/> 
+        <capability name="JavaPlatform" value="MIDP/1.0" /> 
+        <capability name="JavaConfiguration" value="CLDC/1.0" /> 
+        <capability name="JavaPackage" value="wmapi" /> 
+        <capability name="SoundFormat" value="mmf" /> 
+        <capability name="PolyphonicVoices" value="40" /> 
+        <capability name="ImageFormat" value="png" /> 
+        <capability name="HeapSize" value="480 kb" /> 
+        <capability name="MaxJarSize" value="100 kb" /> 
+        <capability name="Region" value="Europe, CIS, South Africa, SE Asia" /> 
+        <capability name="Network" value="GSM, GPRS" /> 
+        <capability name="Frequency" value="900, 1800, 1900" /> 
+    </device> 
+
+<!-- NEC devices -->
+
+    <device>
+        <identifier>NEC/e616</identifier>
+        <features>hasCommandKeyEvents, hasCamera</features>
+        <capability name="ScreenSize" value="176x220"/>
+        <capability name="CanvasSize" value="176x200"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="JavaPackage" value="wmapi" />
+        <capability name="HeapSize" value="600 kb" />
+        <capability name="MaxJarSize" value="96 kb" />
+        <capability name="SoundFormat" value="amr, midi, midi40, iMelody, wav, mp3, aac" />
+    </device>
+    
+
+<!-- Sanyo devices -->
+
+    <device>
+        <identifier>Sanyo/A3011SA</identifier>
+        <capability name="ScreenSize" value="132x176"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+    </device>
+    
+    <device>
+        <identifier>Sanyo/SCP-4900</identifier>
+        <capability name="ScreenSize" value="120x96"/>
+        <capability name="BitsPerPixel" value="12"/>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+    </device>
+    
+    <device>
+        <identifier>Sanyo/SCP-5300</identifier>
+        <capability name="ScreenSize" value="128x132"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+    </device>
+    
+    
+<!-- Sharp devices -->
+
+    <device>
+        <identifier>Sharp/GX10</identifier>
+        <capability name="ScreenSize" value="120x160"/>
+        <capability name="CanvasSize" value="120x130"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />>
+        <capability name="HeapSize" value="512 kb" />
+        <capability name="MaxJarSize" value="80 kb" />
+        <capability name="StorageSize" value="500 kb" />
+        <capability name="MaxRecordStoreSize" value="50 kb" />
+        <capability name="MaxApplicationQuantity" value="51" />
+        <capability name="ImageFormat" value="jpg, png" />
+        <capability name="SoundFormat" value="smaf, eva" />
+        <capability name="MaxPngSize" value="20 kb" />
+        <capability name="MaxJpegSize" value="20 kb" />
+        <capability name="MaxSmafSize" value="dynamic" />
+        <capability name="key.LeftSoftKey" value="21" />
+        <capability name="key.RightSoftKey" value="22" />
+        <capability name="Bugs" value="needsGCinPaint" />
+    </device>   
+
+    <device
+        supportsPolishGui="true">
+        <identifier>Sharp/GX20</identifier>
+        <capability name="ScreenSize" value="240x320"/>
+        <capability name="CanvasSize" value="240x260"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="HeapSize" value="512 kb" />
+        <capability name="MaxJarSize" value="95 kb" />
+        <capability name="StorageSize" value="2 MB" />
+        <capability name="MaxRecordStoreSize" value="50 kb" />
+        <capability name="MaxApplicationQuantity" value="51" />
+        <capability name="ImageFormat" value="jpg, png" />
+        <capability name="SoundFormat" value="smaf, eva, midi" />
+        <capability name="MaxPngSize" value="100 kb" />
+        <capability name="MaxJpegSize" value="100 kb" />
+        <capability name="MaxSmafSize" value="50 kb" />
+        <capability name="DRM" value="Forward Lock" />
+        <capability name="key.LeftSoftKey" value="21" />
+        <capability name="key.RightSoftKey" value="22" />
+        <capability name="Bugs" value="needsGCinPaint" />
+    </device>   
+
+    <device
+        supportsPolishGui="true">
+        <identifier>Sharp/GX30</identifier>
+        <features>hasCamera</features>
+        <capability name="ScreenSize" value="240x320"/>
+        <capability name="CanvasSize" value="240x260"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="HeapSize" value="512 kb" />
+        <capability name="MaxJarSize" value="95 kb" />
+        <capability name="StorageSize" value="2 MB" />
+        <capability name="MaxRecordStoreSize" value="50 kb" />
+        <capability name="MaxApplicationQuantity" value="51" />
+        <capability name="ImageFormat" value="jpg, png" />
+        <capability name="SoundFormat" value="smaf, eva, midi, mp3" />
+        <capability name="MaxPngSize" value="100 kb" />
+        <capability name="MaxJpegSize" value="100 kb" />
+        <capability name="MaxSmafSize" value="50 kb" />
+        <capability name="DRM" value="Forward Lock" />
+        <capability name="CameraResolution" value="1MP" />
+        <capability name="CameraZoom" value="7" />
+        <capability name="key.LeftSoftKey" value="21" />
+        <capability name="key.RightSoftKey" value="22" />
+        <capability name="Bugs" value="needsGCinPaint" />
+    </device>
+
+    <device
+        supportsPolishGui="true">
+        <identifier>Sharp/TM100</identifier>
+        <features>hasCommandKeyEvents, hasCamera</features>
+        <capability name="ScreenSize" value="240x320"/>
+        <capability name="CanvasSize" value="240x260"/>
+        <capability name="BitsPerPixel" value="18"/>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="JavaPackage" value="wmapi" />
+        <capability name="MaxJarSize" value="200 kb" />
+        <capability name="VideoFormat" value="3gpp, h.263, mpeg-4" />
+        <capability name="ImageFormat" value="jpg, png, bmp, wbmp, wpng, nva, gif" />
+        <capability name="SoundFormat" value="amr, smaf, midi, midi40, iMelody" />
+        <capability name="Network" value="GSM, GPRS" />
+        <capability name="Frequency" value="900, 1800, 1900" />
+        <capability name="CameraResolution" value="vga" />
+        <capability name="CameraZoom" value="4" />
+        <capability name="key.LeftSoftKey" value="21" />
+        <capability name="key.RightSoftKey" value="22" />
+    </device>
+
+	<device
+        supportsPolishGui="true">
+        <identifier>Sharp/TM200</identifier>
+        <features>hasCommandKeyEvents, hasCamera</features>
+        <capability name="ScreenSize" value="240x320"/>
+        <capability name="CanvasSize" value="240x260"/>
+        <capability name="BitsPerPixel" value="18"/>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="JavaPackage" value="wmapi" />
+        <capability name="MaxJarSize" value="200 kb" />
+        <capability name="VideoFormat" value="3gpp, h.263, mpeg-4" />
+        <capability name="ImageFormat" value="jpg, png, bmp, wbmp, wpng, nva, gif" />
+        <capability name="SoundFormat" value="amr, smaf, midi, midi40, iMelody, wav, mp3, aac" />
+        <capability name="Network" value="GSM, GPRS" />
+        <capability name="Frequency" value="900, 1800, 1900" />
+        <capability name="CameraResolution" value="2MP" />
+        <capability name="CameraZoom" value="8" />
+        <capability name="key.LeftSoftKey" value="21" />
+        <capability name="key.RightSoftKey" value="22" />
+    </device>
+
+	<device
+        supportsPolishGui="true">
+        <identifier>Sharp/SH902</identifier>
+        <features>hasCommandKeyEvents, hasCamera</features>
+        <capability name="ScreenSize" value="240x320"/>
+        <capability name="CanvasSize" value="240x260"/>
+        <capability name="FullCanvasSize" value="240x294"/>
+        <capability name="BitsPerPixel" value="18"/>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.1" />
+        <capability name="JavaPackage" value="wmapi" />
+        <capability name="MaxJarSize" value="200 kb" />
+        <capability name="VideoFormat" value="3gpp, h.263, mpeg-4" />
+        <capability name="ImageFormat" value="jpg, png, bmp, wbmp, wpng, nva, gif" />
+        <capability name="SoundFormat" value="amr, smaf, midi, midi40, iMelody, wav, mp3, aac" />
+        <capability name="Network" value="GSM, GPRS" />
+        <capability name="Frequency" value="900, 1800, 1900" />
+        <capability name="CameraResolution" value="2MP" />
+        <capability name="CameraZoom" value="8" />
+        <capability name="key.LeftSoftKey" value="21" />
+        <capability name="key.RightSoftKey" value="22" />
+    </device>
+
+<!-- Toshiba devices -->
+
+    <device>
+        <identifier>Toshiba/A3013T</identifier>
+        <capability name="ScreenSize" value="144x176"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="Network" value="CDMA2000 1x"/>
+        <capability name="Frequency" value="800"/>
+    </device>   
+    
+    <device>
+        <identifier>Toshiba/C5001T</identifier>
+        <capability name="ScreenSize" value="144x176"/>
+        <capability name="BitsPerPixel" value="12"/>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="Network" value="CDMA"/>
+        <capability name="Frequency" value="800"/>
+    </device>   
+
+    <device>
+        <identifier>Toshiba/J-T06</identifier>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="Network" value="PDC"/>
+        <capability name="Frequency" value="1500"/>
+    </device>   
+
+<!-- TTPCom devices -->
+
+    <device>
+        <identifier>TTPCom/B'Ngo</identifier>
+        <capability name="ScreenSize" value="220x176"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="Network" value="GSM, GPRS"/>
+        <capability name="Frequency" value="900, 1800, 1900"/>
+    </device>   
+
+<!-- Mio devices -->
+
+    <device>
+        <identifier>Mio/8390</identifier>
+        <features>hasCamera</features>
+        <capability name="os" value="Windows Mobile 2003" />
+        <capability name="ScreenSize" value="176x220"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="StorageSize" value="16 MB" />
+        <capability name="Network" value="GSM, GPRS, EGSM"/>
+        <capability name="Frequency" value="900, 1800, 1900"/>
+    </device>   
+    
+<!-- Sagem devices -->
+
+    <device>
+        <identifier>Sagem/MyX5-2</identifier>
+        <features>doubleBuffering, hasCamera</features>
+        <capability name="os" value="Windows Mobile 2003" />
+        <capability name="ScreenSize" value="128x160"/>
+        <capability name="CanvasSize" value="128x128"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="HeapSize" value="512 kb" />
+        <capability name="JavaPackage" value="mmapi, mmapi-1.1, wmapi" />
+        <capability name="CameraResolution" value="vga" />
+        <capability name="CameraZoom" value="4" />
+    </device>
+    
+    <device>
+        <identifier>Sagem/MyX6</identifier>
+        <features>doubleBuffering, hasCamera</features>
+        <capability name="ScreenSize" value="128x160"/>
+        <capability name="CanvasSize" value="128x128"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="HeapSize" value="512 kb" />
+        <capability name="StorageSize" value="4 MB" />
+        <capability name="CameraResolution" value="vga" />
+        <capability name="CameraZoom" value="4" />
+    </device>
+
+    <device>
+        <identifier>Sagem/MyX7</identifier>
+        <features>doubleBuffering, hasCamera, hasVideo</features>
+        <capability name="ScreenSize" value="128x160"/>
+        <capability name="CanvasSize" value="128x128"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="HeapSize" value="512 kb" />
+        <capability name="StorageSize" value="4 MB" />
+    </device>
+
+    <device>
+        <identifier>Sagem/MyX8</identifier>
+        <features>doubleBuffering, hasCamera, hasVideo</features>
+        <capability name="ScreenSize" value="240x320"/>
+        <capability name="BitsPerPixel" value="18"/>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="HeapSize" value="512 kb" />
+        <capability name="StorageSize" value="4 MB" />
+        <capability name="CameraResolution" value="1.4 MP" />
+        <capability name="CameraZoom" value="8" />
+    </device>
+
+    <device>
+        <identifier>Sagem/MyV-75</identifier>
+        <features>doubleBuffering</features>
+        <capability name="ScreenSize" value="128x160"/>
+        <capability name="CanvasSize" value="128x128"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="HeapSize" value="512 kb" />
+        <capability name="JavaPackage" value="mmapi, mmapi-1.1, wmapi-1.1" />
+    </device>
+
+    <device>
+        <identifier>Sagem/MyV-65</identifier>
+        <features>doubleBuffering, hasCamera</features>
+        <capability name="ScreenSize" value="128x160"/>
+        <capability name="CanvasSize" value="128x128"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="JavaPackage" value="mmapi, mmapi-1.1, wmapi-1.1" />
+        <capability name="HeapSize" value="512 kb" />
+        <capability name="CameraResolution" value="640x480" />
+        <capability name="Network" value="GSM, GPRS"/>
+        <capability name="Frequency" value="900, 1800, 1900"/>
+    </device>
+
+<!-- Sendo devices -->
+    
+    <device>
+        <identifier>Sendo/X</identifier>
+        <features>doubleBuffering, hasCamera</features>
+        <groups>Series60</groups>
+        <capability name="OS" value="Symbian 6.1"/>
+        <capability name="ScreenSize" value="176x220"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="JavaPackage" value="wmapi, btapi" />
+        <capability name="CameraResolution" value="640x480" />
+        <capability name="HeapSize" value="12 MB"/>
+        <capability name="Network" value="GSM, GPRS"/>
+        <capability name="Frequency" value="900, 1800, 1900"/>
+    </device>
+    
+<!-- BenQ devices -->
+    
+    <device>
+        <identifier>BenQ/P30</identifier>
+        <features>doubleBuffering, hasCamera, hasPointerEvents</features>
+        <groups></groups>
+        <capability name="OS" value="Symbian 7.0"/>
+        <capability name="ScreenSize" value="208x320"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPlatform" value="MIDP/1.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="JavaPackage" value="mmapi, wmapi, btapi" />
+        <capability name="CameraResolution" value="640x480" />
+        <capability name="HeapSize" value="12 MB"/>
+        <capability name="Network" value="GSM, GPRS, HSCSD"/>
+        <capability name="Frequency" value="900, 1800, 1900"/>
+    </device>
+    
+<!-- Vodafone devices -->
+    <device>
+        <identifier>Vodafone/Sharp-GX20</identifier>
+        <parent>Sharp/GX20</parent>
+        <capability name="JavaPackage" value="VSCL-1.0.1"/>
+    </device>
+    <device>
+        <identifier>Vodafone/Sharp-GX10</identifier>
+        <parent>Sharp/GX10</parent>
+        <capability name="JavaPackage" value="VSCL-1.0.1"/>
+    </device>
+    <device>
+        <identifier>Vodafone/Motorola-V525</identifier>
+        <parent>Motorola/V525</parent>
+        <capability name="JavaPackage" value="VSCL-1.1.0"/>
+    </device>
+    <device>
+        <identifier>Vodafone/Motorola-V600</identifier>
+        <parent>Motorola/V525</parent>
+        <capability name="JavaPackage" value="VSCL-1.1.0"/>
+    </device>
+
+    <device
+        extends="Sony-Ericsson/K500i">
+        <identifier>Vodafone/Sony-Ericsson-F500i</identifier>
+        <parent>Sony-Ericsson/K500i</parent>
+    </device>   
+    
+    
+<!-- Palm devices -->
+    <device>
+        <identifier>Palm/TungstenC</identifier>
+        <groups></groups>
+        <features>hasCamera, hasPointerEvents, hasPointerMotionEvents, hasCommandKeyEvents</features>
+        <capability name="OS" value="PalmOS"/>
+        <capability name="ScreenSize" value="300x300"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="JavaProtocol" value="http, socket, https, ssl, datagram" />
+        <capability name="HeapSize" value="4 MB" />
+        <capability name="StorageSize" value="51 MB" />
+        <capability name="RMS.MaxRecordSize" value="64 kb" />
+        <capability name="SoundFormat" value="wav" />
+    </device>
+    
+<!-- Qtek devices -->
+    <device>
+        <identifier>Qtek/XDAII</identifier>
+        <groups></groups>
+        <features>hasPointerEvents, hasCommandKeyEvents</features>
+        <capability name="os" value="Windows Mobile 2003" />
+        <capability name="ScreenSize" value="240x320"/>
+        <capability name="BitsPerPixel" value="16"/>
+        <capability name="JavaPackage" value="mmapi, wmapi, btapi" />
+        <capability name="JavaPlatform" value="MIDP/2.0" />
+        <capability name="JavaConfiguration" value="CLDC/1.0" />
+        <capability name="HeapSize" value="64 MB" />
+        <capability name="DRM" value="forward lock" />
+    </device> 
+</devices>

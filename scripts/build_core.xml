@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	$Id: build_core.xml 998 2006-08-30 16:22:05Z yaric $
+
+	Common build routine to reuse by multiple projects.
+	@author: Yaroslav Omelyanenko
+-->
+<project name="LostWorld" basedir=".." default="all">
+
+	<!-- Ant extentions -->
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties"
+			 classpath="${ant.contrib.lib}"/>
+
+	<!-- Definition of the J2ME Polish task -->
+	<taskdef name="j2mepolish" 
+		classname="ng.tools.ant.taskdefs.J2MEPolishBuildTask">
+		<classpath>
+			<fileset dir="${polish.home}/import">
+				<include name="ng-j2mepolish-build.jar"/>
+				<include name="enough-j2mepolish-build.jar"/>
+				<include name="proguard.jar"/>
+				<include name="jdom.jar"/>
+			</fileset>
+			<pathelement location="${wtk.home}/wtklib/kenv.zip"/>
+		</classpath>
+	</taskdef>
+
+	<!-- Temporary directories -->
+	<property name="output.src" location="${tmp.dir}/src"/>
+	<property name="output.rsc" location="${tmp.dir}/rsc"/>
+	<property name="work.dir"	location="${tmp.dir}/build"/>
+
+	<!-- 
+		Target to perform source code preprocessing and substitution of current working
+		code with preprocessing results
+	-->
+	<target name="preprocess">
+		<!-- Set properties -->
+		<property name="polish.preprocess.only" value="true"/>       	
+		<property name="polish.preprocess.target.dir" value="${tmp.dir}/preprocess/src"/>
+		<property name="obfuscation.enabled" value="false"/>
+		<!-- Start preprocessing -->
+ 		<antcall target="j2mepolish"/>	
+		<!-- Substitute old sources with preprocessed one -->
+		<copy todir="${input.src}" overwrite="true">
+			<fileset dir="${polish.preprocess.target.dir}"/>
+		</copy>
+		<!-- Remove temporary folder -->
+		<delete dir="${polish.preprocess.target.dir}"/>
+	</target>
+
+	<!--
+		Prepares all sources and resources depending on target parameters and initialize
+		building process.
+	-->
+	<target name="init.build" 
+			depends="init.directories" 
+			description="Collects all sources and resources into working directory.">
+		<!--=============== 
+			Prepare sources 
+			===============-->
+		<copy todir="${output.src}" overwrite="true">
+			<fileset dir="${src.common}" />
+		</copy>
+		<!-- Copy specific sources -->
+		<for list="${src.path}" param="src" trim="true">
+			<sequential>
+				<copy todir="${output.src}" overwrite="true">
+					<fileset dir="${src.specific}/@{src}" />
+				</copy>
+			</sequential>
+		</for>
+		
+		<!--===================== 
+			  Prepare resources 
+			=====================-->
+		<copy todir="${output.rsc}" overwrite="true" flatten="true" includeEmptyDirs="false">
+			<fileset dir="${rsc}/${path.modifier}/${rsc.path}/${locale.path}"/>
+		</copy>
+
+		<!--===================== 
+			 Start build process 
+			=====================-->	
+		<antcall target="j2mepolish">
+			<param name="input.src" value="${output.src}"/>
+			<param name="obfuscation.enabled" value="${obfuscate}"/>
+		</antcall>
+
+		<!--============
+			 Log output
+			============-->
+		<echo>------------------------------------------</echo>
+		<echo>${jar.name}.jad</echo>
+		<tstamp>
+      		<format property="touch.time" pattern="dd/MM/yyyy hh:mm:ss"/>
+  		</tstamp>
+		<echo>Build done at: ${touch.time}</echo>
+	</target>
+
+	<!-- In this target the J2ME Polish task is used.             -->
+	<!-- It has 3 sections:                                       -->
+	<!--    1. The info-section defines some general information  -->
+	<!--    2. The deviceRequirements-section chooses the devices -->
+	<!--       for which the application is optimized.            -->
+	<!--    3. The build-section controls the actual build        -->
+	<!--       process.                                           -->	
+	<target name="j2mepolish" 
+			description="This is the controller for the J2ME build process.">
+		<echo>Building for ${device.id}</echo> 
+		<j2mepolish>
+		    <!-- general settings, these settings basically form the JAD-attributes. -->
+			<info
+				license="GPL"
+				description="${MIDlet-Description}" 
+				icon="${MIDlet-Icon}" 
+				infoUrl="${MIDlet-Info-URL}" 
+				jarName="${jar.name}.jar" 
+				jarUrl="${polish.jarName}" 
+				name="${MIDlet-Name}" 
+				vendorName="${MIDlet-Vendor}" 
+				version="${version}"
+				dataSize="${MIDlet-Data-Size}"
+				profile="${MicroEdition-Profile}"
+				configuration="${MicroEdition-Configuration}"
+			/>
+			<!-- selection of the target device -->
+			<deviceRequirements>
+				<requirement name="Identifier" value="${device.id}"/>
+			</deviceRequirements>
+		    <!-- build settings -->
+			<build  usePolishGui="false"
+					workDir="${work.dir}" 
+					destDir="${distr.dir}">
+				<!-- Sources directory -->
+				<sources>
+					<source dir="${input.src}" />
+				</sources>
+				<!-- midlets definition -->
+				<midlet class="${MIDlet-Main-Class}" name="${MIDlet-Name}"/>
+				<!-- Resources definition -->
+				<resources dir="${output.rsc}"/>
+				<jad>
+					<filter>
+						MIDlet-Name, MIDlet-Version, MIDlet-Vendor, 
+						MIDlet-1, MIDlet-2?, MIDlet-3?, MIDlet-4?, MIDlet-5?, 
+						MIDlet-Jar-URL, MIDlet-Jar-Size, 
+						MIDlet-Description?, MIDlet-Icon?, MIDlet-Info-URL?,
+						MIDlet-Data-Size?, *
+					</filter>
+					<!-- Add custom attributes -->
+					<attribute 	name="Nokia-MIDlet-Category" 
+								value="Game" 
+								if="polish.group.Series40" />
+					<attribute 	name="MIDletX-No-Command" 
+								value="true" 
+								if="lg.midp1.0.full.screen" />
+
+					<attribute 	name="MIDlet-Install-Notify" 
+								value="http://www.newground.com.ua" 
+								if="vscl.enabled.device" />
+					<attribute 	name="MIDxlet-Network" 
+								value="N" 
+								if="vscl.enabled.device" />
+					<attribute 	name="MIDxlet-API" 
+								value="VSCL-1.0.1" 
+								if="vscl.enabled.device" />
+	 			</jad>
+				<manifestFilter>
+					Manifest-Version, MicroEdition-Profile, MicroEdition-Configuration,
+					MIDlet-Name, MIDlet-Version, MIDlet-Vendor, 
+					MIDlet-1, MIDlet-2?, MIDlet-3?, MIDlet-4?, MIDlet-5?, 
+					MIDlet-Description?, MIDlet-Icon?, MIDlet-Info-URL?, 
+					MIDlet-Data-Size?, MIDletX-No-Command?, Nokia-MIDlet-Category?,
+					MIDxlet-Network?, MIDxlet-API?
+				</manifestFilter>
+				<!-- obfuscator settings: do not obfuscate when the test-property is true -->
+				<obfuscator name="ProGuard" useDefaultPackage="true" if="obfuscation.enabled"/>
+
+				<!-- debug settings: only include debug setting when the test-property is true -->
+				<debug level="${debug.level}" showLogOnError="false" verbose="false" if="debug"/>
+			</build>
+		</j2mepolish>
+	</target>
+
+
+	<!--
+	   Creates temporary directories used during build
+	-->
+	<target name="init.directories">
+
+		<delete dir="${output.src}"/>
+		<delete dir="${output.rsc}"/>
+		<delete dir="${work.dir}"/>
+
+        <mkdir dir="${output.src}"/>
+        <mkdir dir="${output.rsc}"/>
+        <mkdir dir="${work.dir}"/>
+
+    </target>
+
+</project>

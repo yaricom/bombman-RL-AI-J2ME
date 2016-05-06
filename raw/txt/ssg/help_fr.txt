@@ -1,0 +1,9 @@
+#############
+# Help text #
+#############
+Le but du jeu est de compléter tous les niveaux en plaçant des bombes sur les lieux stratégiques pour vaincre tes ennemis et faire exploser les obstacles sur ton chemin.\n\nPowerups\n\nLe jeu a trois types de powerups différents que tu trouveras sous les décombres. Il y a:\nDes flammes - renforcent la détonation des bombes de BombMan. \nDes bombes - BombMan peux lancer plusieurs bombes en même temps sans attendre que la première explose.\nDes patins à roulettes - aident BombMan à se déplacer plus vite.\n\nCommandes\n\nUtiliser la manette ou les touches numériques correpondantes pour diriger BombMan.\nUtiliser la touche FEU pour lancer des bombes.
+
+##############
+# About text #
+##############
+Développé et publié par:\nSandager Small Games\nTous droits réservés:\nSandager Small Games 2005\nGraphisme splash:\nJeppe Højholdt\nGraphisme:\nNewGround\nProduit par:\nNewGround

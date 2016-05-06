@@ -1,0 +1,9 @@
+#############
+# Help text #
+#############
+The goal of the game is to complete the levels by strategically placing bombs throughout them to defeat enemies and blast a path through obstacles.\n\nPowerups\n\nThe game include three types of powerups that are found beneath destructible blocks. These include:\nFlame - Increases the blast range of Bombman's bombs.\nBomb - Bombman can drop more bombs at once without having to wait for one to detonate.\nSkates - Increases Bombman's walking speed.\n\nControls\n\nUse navigation keys or corresponding numeric keys to navigate your bombman.\nUse FIRE key to drop bombs.
+
+##############
+# About text #
+##############
+Developed and published by:\nSandager Small Games\nCopyright:\nSandager Small Games 2005\nSplash gfx:\nJeppe Hojholdt\nGraphics:\nNewGround\nProduced by:\nNewGround

@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	$Id: build_res.xml 1015 2006-09-12 12:29:33Z yaric $
+
+	Initiates resources building for various handsets. Should not be invoked directly,
+	but rather through specific scripts providing values for "path.modifier" and  
+	"locale.path" properties.
+
+	Properties description:
+
+	model 					- handset model, used to look for model/series specific resources
+	text.path 				- defines switch case used during textual data processing to use in 
+							combine with conditional elements
+	map.path 				- defines part of path to look for map definitions under /raw/binary 
+							folder specific for particullar build 
+	wav.path, 
+	midi.path, 
+	mmf.path, etc 			- media files specific parts of resources paths to look for
+							particullar media data under /raw/media directory
+	gfx.path 				- screen size, model, custom specific graphical objects used in 
+							particullar build under /raw/gfx directory
+	dsp.path 				- the last part of path to look for customer specific resources under 
+							/raw/gfx/${path.modifier} directory
+	screen.gfx.path 		- definines location of common graphical resources for particullar build 
+							under /raw/gfx/common/screen directory
+	full.screen.gfx.path 	- defines location of full screen specific resources for particullar 
+							build under /raw/gfx/common/fullscreen directory. If skipped than 
+							assumed that this build does not support full screen rendering and as 
+							result no full screen specific graphics will be included
+	big.bundle 				- indicates whether majority of resources should be included into one
+							big bundle (large heap devices) or not (small heap). Values: true/false
+
+	@author: Yaroslav Omelyanenko
+-->
+<project name="ngtools" basedir=".." default="all">
+
+	<!--
+		Target to prepare all resources
+	-->
+	<target name="all">
+
+		<antcall target="e700"/>
+
+		<antcall target="v500"/>
+
+		<antcall target="k700"/>
+
+		<antcall target="k500"/>
+
+		<antcall target="t610"/>
+
+		<antcall target="s30"/>
+
+		<antcall target="s40_dp3_240x320"/>
+
+		<antcall target="s40_dp1"/>
+
+		<antcall target="s60_dp3_240x320"/>
+
+		<antcall target="s60_dp1"/>
+
+	</target>
+
+	<!--
+		Target to prepare resources for Samsung E700 like (128x160 MIDP 1.0) devices 	
+	-->
+	<target name="e700">
+
+		<property name="model" value="e700"/>
+
+		<!-- Textual data -->
+		<property name="text.path"				value="${model}"/>
+
+		<!-- Level data -->
+		<property name="map.path"				value="medMap"/>
+
+		<!-- Sounds data -->
+		<property name="mmf.path" 				value="mmf"/>
+
+		<!-- Graphics -->
+		<property name="gfx.path"				value="128/160"/>
+		<property name="dsp.path"				value="128/160"/><!-- Path to look for DSP preloader image -->
+		<property name="screen.gfx.path"		value="med"/>
+		<property name="big.bundle"				value="false"/>
+
+	    <!-- Start actual building -->
+		<ant antfile="scripts/ant_tools.xml" 	target="build"/>
+
+	</target>
+
+	<!--
+		Target to prepare all resources for Motorola V series
+	-->
+	<target name="v500">
+
+		<property name="model" value="v500"/>
+
+		<!-- Textual data -->
+		<property name="text.path"				value="${model}"/>
+
+		<!-- Level data -->
+		<property name="map.path"				value="bigMap"/>
+
+		<!-- Sounds data -->
+		<property name="wav.path" 				value="wav"/>
+		<property name="midi.path" 				value="midi"/>
+
+		<!-- Graphics -->
+		<property name="gfx.path"				value="176/204,icon/15x15"/>
+		<property name="dsp.path"				value="176/204"/><!-- Path to look for DSP preloader image -->
+		<property name="screen.gfx.path"		value="big"/>
+		<property name="full.screen.gfx.path" 	value="big"/>
+		<property name="big.bundle"				value="false"/>
+
+	    <!-- Start actual building -->
+		<ant antfile="scripts/ant_tools.xml" 	target="build"/>
+
+	</target>
+
+	<!--
+		Target to prepare all resources for SE K700
+	-->
+	<target name="k700">
+
+		<property name="model" value="k700"/>
+
+		<!-- Textual data -->
+		<property name="text.path"				value="${model}"/>
+
+		<!-- Level data -->
+		<property name="map.path"				value="bigMap"/>
+
+		<!-- Sounds data -->
+		<property name="wav.path" 				value="wav"/>
+		<property name="midi.path" 				value="midi"/>
+
+		<!-- Graphics -->
+		<property name="gfx.path"				value="176/176"/>
+		<property name="dsp.path"				value="176/176"/><!-- Path to look for DSP preloader image -->
+		<property name="screen.gfx.path"		value="big"/>
+		<property name="full.screen.gfx.path" 	value="big"/>
+		<property name="big.bundle"				value="true"/>
+
+	    <!-- Start actual building -->
+		<ant antfile="scripts/ant_tools.xml" 	target="build"/>
+
+	</target>
+
+	<!--
+		Target to prepare all resources for SE K500
+	-->
+	<target name="k500">
+
+		<property name="model" value="k500"/>
+
+		<!-- Textual data -->
+		<property name="text.path"				value="${model}"/>
+
+		<!-- Level data -->
+		<property name="map.path"				value="medMap"/>
+
+		<!-- Sounds data -->
+		<property name="wav.path" 				value="wav"/>
+		<property name="midi.path" 				value="midi"/>
+
+		<!-- Graphics -->
+		<property name="gfx.path"				value="128/128"/>
+		<property name="dsp.path"				value="128/128"/><!-- Path to look for DSP preloader image -->
+		<property name="screen.gfx.path"		value="med"/>
+		<property name="full.screen.gfx.path" 	value="med"/>
+		<property name="big.bundle"				value="true"/>
+
+	    <!-- Start actual building -->
+		<ant antfile="scripts/ant_tools.xml" 	target="build"/>
+
+	</target>
+
+
+	<!--
+		Target to prepare all resources for SE T610
+	-->
+	<target name="t610">
+
+		<property name="model" value="t610"/>
+
+		<!-- Textual data -->
+		<property name="text.path"				value="${model}"/>
+
+		<!-- Level data -->
+		<property name="map.path"				value="medMap"/>
+
+		<!-- Sounds data -->
+		<property name="midi.path" value="midi"/>
+
+		<!-- Graphics -->
+		<property name="gfx.path"				value="128/128,short-flame"/>
+		<property name="dsp.path"				value="128/128"/><!-- Path to look for DSP preloader image -->
+		<property name="screen.gfx.path"		value="med"/>
+		<property name="big.bundle"				value="false"/>
+
+	    <!-- Start actual building -->
+		<ant antfile="scripts/ant_tools.xml" 	target="build"/>
+
+	</target>
+
+	<!--
+		Target to prepare all resources for Nokia Series 40 DP 3.0 with 240x320 screen dimensions
+	-->
+	<target name="s40_dp3_240x320">
+
+		<property name="model" 					value="s40_dp3_240x320"/>
+
+		<!-- Textual data -->
+		<property name="text.path"				value="${model}"/>
+
+		<!-- Level data -->
+		<property name="map.path"				value="bigMap"/>
+
+		<!-- Sounds data -->
+		<property name="midi.path" 				value="midi"/>
+
+		<!-- Graphics -->
+		<property name="gfx.path"				value="240/320"/>
+		<property name="dsp.path"				value="240/320"/><!-- Path to look for DSP preloader image -->
+		<property name="screen.gfx.path"		value="extrabig"/>
+		<property name="full.screen.gfx.path" 	value="extrabig"/>
+		<property name="big.bundle"				value="true"/>
+
+	    <!-- Start actual building -->
+		<ant antfile="scripts/ant_tools.xml" 	target="build"/>
+
+	</target>
+
+	<!--
+		Target to prepare all resources for Nokia Series 40 DP 1.0
+	-->
+	<target name="s40_dp1">
+
+		<property name="model" value="s40_dp1"/>
+
+		<!-- Textual data -->
+		<property name="text.path"				value="${model}"/>
+
+		<!-- Level data -->
+		<property name="map.path"				value="medMap"/>
+
+		<!-- Graphics -->
+		<property name="gfx.path"				value="128/128"/>
+		<property name="dsp.path"				value="128/128"/><!-- Path to look for DSP preloader image -->
+		<property name="screen.gfx.path"		value="med"/>
+		<property name="full.screen.gfx.path" 	value="med"/>
+		<property name="big.bundle"				value="false"/>
+
+	    <!-- Start actual building -->
+		<ant antfile="scripts/ant_tools.xml" 	target="build"/>
+
+	</target>
+
+	<!--
+		Target to prepare all resources for Nokia Series 60 DP 3.0, DP 2.0 with 240x320 screen dimensions
+	-->
+	<target name="s60_dp3_240x320">
+
+		<property name="model" 					value="s60_dp3_240x320"/>
+
+
+		<!-- Textual data -->
+		<property name="text.path"				value="${model}"/>
+
+		<!-- Level data -->
+		<property name="map.path"				value="bigMap"/>
+
+		<!-- Sounds data -->
+		<property name="wav.path" value="wav"/>
+		<property name="midi.path" value="midi"/>
+
+		<!-- Graphics -->
+		<property name="gfx.path"				value="240/320,icon/42x29"/>
+		<property name="dsp.path"				value="240/320"/><!-- Path to look for DSP preloader image -->
+		<property name="screen.gfx.path"		value="extrabig"/>
+		<property name="full.screen.gfx.path" 	value="extrabig"/>
+		<property name="big.bundle"				value="true"/>
+
+	    <!-- Start actual building -->
+		<ant antfile="scripts/ant_tools.xml" 	target="build"/>
+
+	</target>
+
+
+	<!--
+		Target to prepare all resources for Nokia Series 60 DP 1.0, DP 2.0 with 176x208 screen dimensions
+	-->
+	<target name="s60_dp1">
+
+		<property name="model" value="s60_dp1"/>
+
+		<!-- Textual data -->
+		<property name="text.path"				value="${model}"/>
+
+		<!-- Level data -->
+		<property name="map.path"				value="bigMap"/>
+
+		<!-- Sounds data -->
+		<property name="wav.path" value="wav"/>
+		<property name="midi.path" value="midi"/>
+
+		<!-- Graphics -->
+		<property name="gfx.path"				value="176/208,icon/42x29"/>
+		<property name="dsp.path"				value="176/208"/><!-- Path to look for DSP preloader image -->
+		<property name="screen.gfx.path"		value="big"/>
+		<property name="full.screen.gfx.path" 	value="big"/>
+		<property name="big.bundle"				value="true"/>
+
+	    <!-- Start actual building -->
+		<ant antfile="scripts/ant_tools.xml" 	target="build"/>
+
+	</target>
+
+	<!--
+		Target to prepare all resources for Nokia Series 30
+	-->
+	<target name="s30">
+
+		<property name="model" value="s30"/>
+
+		<!-- Textual data -->
+		<property name="text.path"				value="${model}"/>
+
+		<!-- Level data -->
+		<property name="map.path"				value="smallMap"/>
+
+		<!-- Graphics -->
+		<property name="gfx.path"				value="s30"/>
+		<property name="dsp.path"				value="96/65"/><!-- Path to look for DSP preloader image -->
+		<property name="screen.gfx.path"		value="med"/>
+		<property name="full.screen.gfx.path" 	value="small"/>
+		<property name="big.bundle"				value="false"/>
+
+	    <!-- Start actual building -->
+		<ant antfile="scripts/ant_tools.xml" 	target="build"/>
+
+	</target>
+
+</project>

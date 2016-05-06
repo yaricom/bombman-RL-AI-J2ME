@@ -1,0 +1,46 @@
+#################################
+# Common Bombman Game resources #
+#################################
+# Main menu options
+Fortsæt
+Nyt spil
+Top scores
+Indstillinger
+Hjælp
+Om
+
+# Options menu
+Sprog
+Musik
+Lyd
+
+# Pause menu
+Fortsæt
+Genstart level
+Hovedmenu
+Afslut spillet
+
+# Commands
+Vælg
+Ja
+Skift
+Start
+Gem
+
+Pause
+OK
+Nej
+Tilbage
+Exit
+
+# Text items
+Loader...
+Tryk på en knap
+Dit spil gemmes ikke. Er du sikker?
+Level: 
+Du vinder!
+Du taber!
+Vil du spille igen?
+Spillet er slut!\n Din score er:
+Vil du gemme dine resultater?
+Indtast din navn:

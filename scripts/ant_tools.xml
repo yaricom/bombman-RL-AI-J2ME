@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	$Id: ant_tools.xml 998 2006-08-30 16:22:05Z yaric $
+
+	Provides various convinient tools to operate with graphics and textual data.
+
+	@author: Yaroslav Omelyanenko
+-->
+<project name="ngtools" basedir=".." default="usage">
+	<property file="build.properties"/>
+
+	<!-- Ant extentions -->
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties"
+			 classpath="${ant.contrib.lib}"/>
+
+	<!-- Custom tag definitions -->
+	<taskdef resource="ng/tools/ant/antlib.xml" 
+			 classpath="${pngframework.lib}"/>
+
+	<taskdef resource="ng/tools/ant/antlib.xml"
+			 classpath="${ant.utils.lib}"/>	
+
+
+	<!--
+		Target to be invoked to build all resources for particullar handset
+	-->
+	<target name="build">
+		<property name="rsc.out.dir" value="${rsc}/${path.modifier}/${model}/${locale.path}"/>
+		<!-- Clear output directories -->
+		<delete dir="${rsc.out.dir}"/>
+		<antcall target="build.init"/>
+	</target>
+
+
+	<!--
+		Starts actual building
+	-->
+	<target name="build.init" depends="make_level, make_sounds, make_txt, make_gfx"/>
+
+
+	<!--
+		Target to prepare level data
+	-->
+	<target name="make_level">
+
+		<mkdir dir="${rsc.out.dir}/${map.path}"/>
+
+		<echo>=========== Prepare levels definitions : Start ===========</echo>
+        <resources output="${rsc.out.dir}/${map.path}/l">
+			<utfText file="${raw.binary.rsc}/${map.path}/l1.txt"/>
+			<utfText file="${raw.binary.rsc}/${map.path}/l2.txt"/>
+			<utfText file="${raw.binary.rsc}/${map.path}/l3.txt"/>
+			<utfText file="${raw.binary.rsc}/${map.path}/l4.txt"/>
+			<utfText file="${raw.binary.rsc}/${map.path}/l5.txt"/>
+			<utfText file="${raw.binary.rsc}/${map.path}/l6.txt"/>
+			<utfText file="${raw.binary.rsc}/${map.path}/l7.txt"/>
+			<utfText file="${raw.binary.rsc}/${map.path}/l8.txt"/>
+			<utfText file="${raw.binary.rsc}/${map.path}/l9.txt"/>
+			<utfText file="${raw.binary.rsc}/${map.path}/l10.txt"/>
+		</resources>
+		<echo>=========== Prepare levels definitions : End ===========</echo>
+	</target>
+
+	<!--
+		Target to prepare sounds.
+		Try to prepare appropriate sounds in accordance with parameters
+	-->
+	<target name="make_sounds" depends="prep_wav, prep_midi, prep_mmf"/>
+
+	<!--
+		Prepare wav files
+	-->
+	<target name="prep_wav" if="wav.path">
+
+		<mkdir dir="${rsc.out.dir}/${wav.path}"/>
+
+		<echo>=========== Prepare wav sounds : Start ===========</echo>
+		<resources output="${rsc.out.dir}/${wav.path}/sound">
+			<file file="${raw.media.rsc}/${wav.path}/blow.wav"/>
+			<file file="${raw.media.rsc}/${wav.path}/bonus.wav"/>
+			<file file="${raw.media.rsc}/${wav.path}/scream.wav"/>
+			<file file="${raw.media.rsc}/${wav.path}/hallelujah.wav"/>
+		</resources>	         		
+		<echo>=========== Prepare wav sounds : End ===========</echo>
+	</target>
+
+	<!--
+		Prepare mmf files
+	-->
+	<target name="prep_mmf" if="mmf.path">
+
+		<mkdir dir="${rsc.out.dir}/${mmf.path}"/>
+
+		<echo>=========== Prepare mmf sounds : Start ===========</echo>
+        <copy todir="${rsc.out.dir}/${mmf.path}" overwrite="true">
+			<fileset dir="${raw.media.rsc}/${mmf.path}/" includes="*.mmf"/>
+		</copy>	         		
+		<echo>=========== Prepare mmf sounds : End ===========</echo>
+
+	</target>
+
+	<!--
+		Prepare midi file
+	-->
+	<target name="prep_midi" if="midi.path">
+
+		<mkdir dir="${rsc.out.dir}/${midi.path}"/>
+
+		<echo>=========== Prepare midi sounds : Start ===========</echo>
+        <copy todir="${rsc.out.dir}/${midi.path}" overwrite="true">
+			<fileset dir="${raw.media.rsc}/${midi.path}/" includes="*.mid"/>
+		</copy>
+		<echo>=========== Prepare midi sounds : End ===========</echo>
+		
+	</target>
+
+	<!--
+		Target to prepare all textual resouces
+	-->
+	<target name="make_txt">
+
+		<mkdir dir="${rsc.out.dir}/text"/>
+
+		<!-- Prepare textual resources -->
+		<echo>=========== Prepare main text resources : Start ===========</echo>
+        <resources output="${rsc.out.dir}/text/res">
+			<utfText file="${raw.text.rsc}/${path.modifier}/res_en.txt" 
+					 selector="${text.path}"/>
+			<utfText file="${raw.text.rsc}/${path.modifier}/res_da.txt" 
+					 selector="${text.path}"/>
+			<utfText file="${raw.text.rsc}/${path.modifier}/res_de.txt" 
+					 selector="${text.path}"/>
+			<utfText file="${raw.text.rsc}/${path.modifier}/res_fr.txt" 
+					 selector="${text.path}"/>
+			<utfText file="${raw.text.rsc}/${path.modifier}/res_es.txt" 
+					 selector="${text.path}"/>
+			<utfText file="${raw.text.rsc}/${path.modifier}/res_ru.txt" 
+					 selector="${text.path}"/>
+		</resources>
+		<echo>=========== Prepare main text resources : End ===========</echo>
+
+		<!-- Prepare help resources -->
+		<echo>=========== Prepare help resources : Start ===========</echo>
+        <resources output="${rsc.out.dir}/text/res.hlp">
+			<utfText file="${raw.text.rsc}/${path.modifier}/help_en.txt" 
+					 selector="${text.path}"/>
+			<utfText file="${raw.text.rsc}/${path.modifier}/help_da.txt" 
+					 selector="${text.path}"/>
+			<utfText file="${raw.text.rsc}/${path.modifier}/help_de.txt" 
+					 selector="${text.path}"/>
+			<utfText file="${raw.text.rsc}/${path.modifier}/help_fr.txt" 
+					 selector="${text.path}"/>
+			<utfText file="${raw.text.rsc}/${path.modifier}/help_es.txt" 
+					 selector="${text.path}"/>                    
+			<utfText file="${raw.text.rsc}/${path.modifier}/help_ru.txt" 
+					 selector="${text.path}"/>
+		</resources>
+		<echo>=========== Prepare help resources : End ===========</echo>
+
+	</target>
+
+	<!--
+		Target to prepare all graphics resources for specific phone.
+	-->
+	<target name="make_gfx">
+		<!--
+			Set paths properties
+								-->
+		<property name="tmp.dir.raw" value="${tmp.dir}/make_gfx/${model}/raw"/>
+		<property name="tmp.dir.rsc" value="${tmp.dir}/make_gfx/${model}/rsc"/>
+		<!-- Output result directory -->
+		<property name="gfx.rsc.out.dir" value="${rsc.out.dir}/gfx"/>
+
+		<!--================================ 
+			Prepare resources for processing
+			================================-->
+		<delete dir="${tmp.dir.raw}"/>
+		<mkdir dir="${tmp.dir.raw}"/>
+
+		<!-- 
+			Copy all resources for specified build into temporary directory
+		-->
+		<echo>=========== Collecting all needed resources with modifier ${common.gfx.path} : Start ===========</echo>
+		<!-- Copy general resources -->
+		<copy todir="${tmp.dir.raw}" overwrite="true">
+			<fileset dir="${raw.gfx.rsc}/common/shared"> 
+				<include name="**/*.png"/>			
+			</fileset>
+		</copy>
+
+		<!-- Copy common resources for particullar screen size -->
+		<copy todir="${tmp.dir.raw}" overwrite="true">
+			<fileset dir="${raw.gfx.rsc}/common/screen/${screen.gfx.path}">
+				<include name="**/*.png"/>			
+			</fileset>
+		</copy>
+		
+		<!-- Copy full screen resources for particullar screen size if appropriate -->
+		<antcall target="copy.full.screen"/>
+
+		<!-- Copy model specific resources -->
+		<for list="${gfx.path}" param="specific" trim="true">
+			<sequential>
+				<copy todir="${tmp.dir.raw}" overwrite="true">
+					<fileset dir="${raw.gfx.rsc}/@{specific}" includes="**/*.png"/>
+				</copy>
+			</sequential>
+		</for>
+
+		<!--
+			Prepare special preloaders
+		-->
+		<if>
+			<not>
+ 				<equals arg1="${path.modifier}" arg2="general" />
+			</not>
+			<then>
+				<copy todir="${tmp.dir.raw}" overwrite="true">
+					<fileset dir="${raw.gfx.rsc}/${path.modifier}/${dsp.path}" includes="*.png"/>
+				</copy>					
+			</then>
+		</if>
+
+		<!--================================ 
+			   Start resources processing
+			================================-->
+		<!--
+			Clean PNG files
+		-->
+		<!--
+			Clean PNG files
+		-->
+		<echo>=========== Clean PNG files : Start ===========</echo>
+		<cleanpng toDir="${gfx.rsc.out.dir}">
+			<fileset dir="${tmp.dir.raw}" includes="*.png"/>
+		</cleanpng>
+		<echo>=========== Clean PNG files : End ===========</echo>
+
+		<!--
+			Process common images
+		-->
+		<echo>=========== Process common images : Start ===========</echo>
+		<meltpng baseFile="${tmp.dir.raw}/merge/flame.png" 
+				 out="${gfx.rsc.out.dir}/cm.img">
+			<fileset dir="${tmp.dir.raw}/merge">
+				<include name="flame.png"/>
+				<include name="tiles.png"/>
+			</fileset>
+			<fileset dir="${tmp.dir.raw}/merge"
+				includes="scroll-*.png"/>
+		</meltpng>
+		<echo>=========== Process common images : End ===========</echo>
+
+		<!--
+			Process full screen specific if appropriate
+		-->
+		<antcall target="process.full.screen"/>
+
+		<!--=================================================================== 
+			All resources below will be included into one bundle if appropriate 
+			===================================================================-->
+		<delete dir="${tmp.dir.rsc}"/>
+		<mkdir dir="${tmp.dir.rsc}"/>
+
+		<!--
+			Prepare bomberman sprites
+		-->
+		<echo>=========== Prepare bomberman sprites : Start ===========</echo>
+		<meltpng baseFile="${tmp.dir.raw}/merge/bomberman-walk.png" 
+				 out="${tmp.dir.rsc}/b.img">
+            <fileset dir="${tmp.dir.raw}/merge">
+				<include name="bomberman-death.png"/>
+				<include name="bomberman-win.png"/>
+			</fileset>
+		</meltpng>
+		<echo>=========== Prepare bomberman sprites : End ===========</echo>
+
+		<!--
+			Prepare clock images
+		-->
+		<echo>=========== Prepare clock images : Start ===========</echo>
+		<meltpng baseFile="${tmp.dir.raw}/merge/clock-bottom.png" 
+				 out="${tmp.dir.rsc}/c.img">
+            <fileset dir="${tmp.dir.raw}/merge">
+				<include name="clock-top.png"/>
+			</fileset>
+		</meltpng>
+		<echo>=========== Prepare clock images : End ===========</echo>
+
+		<!--
+			Prepare main menu images
+		-->
+		<echo>=========== Prepare main menu images : Start ===========</echo>
+		<meltpng baseFile="${tmp.dir.raw}/merge/menu-background-fill.png" 
+				 out="${tmp.dir.rsc}/m.img">
+			<fileset dir="${tmp.dir.raw}/merge"
+				includes="title.png"/>
+		</meltpng>
+		<echo>=========== Prepare main menu images : End ===========</echo>
+
+		<!--
+			Prepare main menu captions images
+		-->
+		<echo>=========== Prepare main menu captions images : Start ===========</echo>
+		<meltpng baseFile="${tmp.dir.raw}/merge/main-menu-captions-en.png" 
+				 out="${tmp.dir.rsc}/mc.img">
+			<fileset dir="${tmp.dir.raw}/merge"
+				includes="main-menu-captions-da.png"/>
+			<fileset dir="${tmp.dir.raw}/merge"
+				includes="main-menu-captions-de.png"/>
+			<fileset dir="${tmp.dir.raw}/merge"
+				includes="main-menu-captions-fr.png"/>
+			<fileset dir="${tmp.dir.raw}/merge"
+				includes="main-menu-captions-es.png"/>
+			<fileset dir="${tmp.dir.raw}/merge"
+				includes="main-menu-captions-ru.png"/>
+		</meltpng>
+		<echo>=========== Prepare main menu captions images : End ===========</echo>
+
+		<!--
+			Prepare options menu images
+		-->
+		<echo>=========== Prepare options menu images : Start ===========</echo>
+		<meltpng baseFile="${tmp.dir.raw}/merge/flags.png" 
+				 out="${tmp.dir.rsc}/om.img">
+			<fileset dir="${tmp.dir.raw}/merge">
+				<include name="checkbox-*.png"/>
+				<include name="icon-*.png"/>
+			</fileset>
+		</meltpng>
+		<echo>=========== Prepare options menu images : End ===========</echo>
+
+		<!--
+	        Clean not merged images
+		-->
+		<echo>=========== Clean not merged images : Start ===========</echo>
+		<cleanpng toDir="${tmp.dir.rsc}">
+			<fileset dir="${tmp.dir.raw}/merge/" includes="sc.png"/>
+		</cleanpng>
+		<echo>=========== Clean not merged images : End ===========</echo>
+
+
+		<!--
+			Create big resources bundle
+		-->
+		<!--
+			Create big resources bundle
+		-->
+		<if>
+			<istrue value="${big.bundle}"/>
+			<then>
+				<!-- Create one big resource bundle -->
+				<resources output="${gfx.rsc.out.dir}/img.res">
+					<file file="${tmp.dir.rsc}/b.img"/>
+					<file file="${tmp.dir.rsc}/c.img"/>
+					<file file="${tmp.dir.rsc}/m.img"/>
+					<file file="${tmp.dir.rsc}/mc.img"/>
+					<file file="${tmp.dir.rsc}/sc.png"/>
+					<file file="${tmp.dir.rsc}/om.img"/>
+				</resources>
+			</then>
+			<else>
+				<!-- Copy processed resources to the working directory -->
+    		    <copy todir="${gfx.rsc.out.dir}" overwrite="true">
+					<fileset dir="${tmp.dir.rsc}">
+						<include name="*.png"/>
+						<include name="*.img"/>
+					</fileset>
+				</copy>
+			</else>
+		</if>
+
+	</target>
+
+	<!--
+		Copy full screen specific resources
+	-->
+	<target name="copy.full.screen" if="full.screen.gfx.path">
+		<copy todir="${tmp.dir.raw}/merge" overwrite="true">
+			<fileset dir="${raw.gfx.rsc}/common/fullscreen/${full.screen.gfx.path}">
+				<include name="*.png"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<!--
+		Process full screen specific images
+	-->
+	<target name="process.full.screen" if="full.screen.gfx.path">
+		<echo>=========== Prepares graphics for full screen : Start ===========</echo>
+		<meltpng baseFile="${tmp.dir.raw}/merge/command-positive.png" 
+				 out="${gfx.rsc.out.dir}/fs.img">
+			<fileset dir="${tmp.dir.raw}/merge"
+					includes="command-negative.png"/>
+		</meltpng>
+		<echo>=========== Prepares graphics for full screen : End ===========</echo>
+	</target>
+
+	<!--
+		Test target to decode particullar image data
+	-->
+	<target name="decode">
+		<decode outDir="tmp/gfx" prefix="image_" suffix=".png" >
+    		<fileset dir="${tmp.dir}/make_gfx/s60_dp1/rsc" >
+      			<include name="mc.img"/>
+    		</fileset>
+  		</decode>
+	</target>
+</project>

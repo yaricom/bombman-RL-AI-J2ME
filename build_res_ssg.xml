@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	$Id: build_res_ssg.xml 1015 2006-09-12 12:29:33Z yaric $
+
+	Initiates resources building for various handsets.
+
+	@author: Yaroslav Omelyanenko
+-->
+<project name="ngtools" basedir="." default="all">
+
+	<!-- Path modifier for text resources and build output -->
+	<property name="path.modifier" value="ssg"/>
+	<!-- All locales are incldued in every build -->
+	<property name="locale.path" value="all"/>
+
+
+	<!--
+		Target to prepare all resources
+	-->
+	<target name="all">
+		<ant antfile="scripts/build_res.xml" target="all"/>
+	</target>
+
+	<!--
+		Target to prepare resources for Samsung E700 like (128x160 MIDP 1.0) devices 	
+	-->
+	<target name="e700">
+		<ant antfile="scripts/build_res.xml" target="e700"/>
+	</target>
+
+	<!--
+		Target to prepare all resources for Motorola V series
+	-->
+	<target name="v500">
+		<ant antfile="scripts/build_res.xml" target="v500"/>
+	</target>
+
+	<!--
+		Target to prepare all resources for SE K700
+	-->
+	<target name="k700">
+		<ant antfile="scripts/build_res.xml" target="k700"/>
+	</target>
+
+
+	<!--
+		Target to prepare all resources for SE K500
+	-->
+	<target name="k500">
+		<ant antfile="scripts/build_res.xml" target="k500"/>
+	</target>
+
+	<!--
+		Target to prepare all resources for SE T610
+	-->
+	<target name="t610">
+		<ant antfile="scripts/build_res.xml" target="t610"/>
+	</target>
+
+	<!--
+		Target to prepare all resources for Nokia Series 40 DP 3.0 with 240x320 screen dimensions
+	-->
+	<target name="s40_dp3_240x320">
+		<ant antfile="scripts/build_res.xml" target="s40_dp3_240x320"/>
+	</target>
+
+	<!--
+		Target to prepare all resources for Nokia Series 40 DP 1.0
+	-->
+	<target name="s40_dp1">
+		<ant antfile="scripts/build_res.xml" target="s40_dp1"/>
+	</target>
+
+	<!--
+		Target to prepare all resources for Nokia Series 60 DP 3.0, DP 2.0 with 240x320 screen dimensions
+	-->
+	<target name="s60_dp3_240x320">
+		<ant antfile="scripts/build_res.xml" target="s60_dp3_240x320"/>
+	</target>
+
+	<!--
+		Target to prepare all resources for Nokia Series 60 DP 1.0, DP 2.0 
+		with 176x208 screen dimensions
+	-->
+	<target name="s60_dp1">
+		<ant antfile="scripts/build_res.xml" target="s60_dp1"/>
+	</target>
+
+	<!--
+		Build for Nokia series 30
+	-->
+	<target name="s30">
+		<ant antfile="scripts/build_res.xml" target="s30"/>
+	</target>
+
+</project>

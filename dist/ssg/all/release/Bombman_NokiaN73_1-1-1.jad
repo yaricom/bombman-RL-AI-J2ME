@@ -1,0 +1,10 @@
+MIDlet-Name: Bombman
+MIDlet-Version: 1.1.1
+MIDlet-Vendor: SSG
+MIDlet-1: Bombman,/icon.png,Bombman
+MIDlet-Jar-URL: Bombman_NokiaN73_1-1-1.jar
+MIDlet-Jar-Size: 118831
+MIDlet-Description: Arcade puzzle game.
+MIDlet-Icon: /icon.png
+MIDlet-Info-URL: http://www.games-2go.com
+MIDlet-Data-Size: 512

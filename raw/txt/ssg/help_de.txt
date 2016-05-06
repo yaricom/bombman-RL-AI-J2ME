@@ -1,0 +1,9 @@
+#############
+# Help text #
+#############
+Deine Aufgabe ist es, alle Schwierigkeitsstufen zu bewältigen, indem du die Bomben an strategisch wichtigen Stellen anbringst, um Feinde  bekämpfen zu können und damit du dir Schneisen durch die Hindernisse sprengen kannst.\n\nPowerups\n\nDas Spiel hat 3 verschiedene Powerups die du unter den einzelnen Hindernissen findest. Es gibt:\nFlammen - vergrößert die Sprengkraft von BombMans Bomben.\nBomben - BombMan kan mehrere Bomben auf einmal werfen ohne auf die Explosion der ersten warten zu müssen.\nRollschuhe - erhöhen die Geschwindigkeit von BombMan.\n\nSteuerung\n\nJoystick bzw. die numerischen Tasten benutzen um BombMan zu steuern.\nFEUER-Taste verwenden um die Bombe fallen zu lassen.
+
+##############
+# About text #
+##############
+Entwickelt und herausgegeben von:\nSandager Small Games\nCopyright:\nSandager Small Games 2005\nSplash Grafik:\nJeppe Højholdt\nGrafik:\nNewGround\nProduziert von:\nNewGround

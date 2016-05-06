@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	$Id: build.xml 1015 2006-09-12 12:29:33Z yaric $
+
+	General purpose build script. Should not be invoked directly but rather through scripts-adapters.
+
+	Properties description:
+
+	jar.name	- the name to use for JAR/JAD file
+	device.id	- the ID of device in the J2MEpolish devices database
+	src.path	- list of Java source files ordered from more generic to specific ones
+	rsc.path	- path to look up for processed resources for particular build under /rsc folder
+
+	@author: Yaroslav Omelyanenko
+-->
+<project name="Bombman" basedir=".." default="all">
+
+    <property file="build.properties"/>
+
+	<!-- CLASS descriptions -->
+	<property name="MIDlet-Main-Class" value="ng.games.bombman.Bombman"/>
+
+    <!-- MIDLET description -->
+	<property name="MIDlet-Name" value="${ant.project.name}"/>
+	<property name="MIDlet-Description" value="Arcade puzzle game."/>
+	<property name="MIDlet-Version" value="${version}"/>
+	<property name="MIDlet-Vendor" value="SSG"/>
+	<property name="MIDlet-Info-URL" value="http://www.games-2go.com"/>
+	<property name="MIDlet-Icon" value="icon.png"/>
+	<property name="MIDlet-Data-Size" value="512"/>
+	<property name="MicroEdition-Profile" value="MIDP-1.0"/>
+	<property name="MicroEdition-Configuration" value="CLDC-1.0"/>
+
+	<!-- Build output directory -->
+	<property name="distr.dir" location="dist/${path.modifier}/${locale.path}/release"/>
+
+	<!--
+	   Removes all distributives
+	-->
+	<target name="clean_builds" description="Removes all builds">
+		<delete dir="${distr.dir}"/>
+	</target>
+
+	<!--
+		Starts source code preprocessing
+	-->
+	<target name="preprocess.only">
+		<ant antfile="scripts/build_core.xml" target="preprocess">	     	
+			<property name="input.src" value="src/common"/>
+		</ant>
+	</target>
+
+	<!--
+		Builds all handsets
+	-->
+	<target name="all">
+		<antcall target="all.samsung"/>
+		<antcall target="all.se"/>
+		<antcall target="all.motorola"/>
+		<antcall target="all.nokia"/>
+	</target>
+
+
+	<!--
+		Builds for all supported Samsung devices
+	-->
+	<target name="all.samsung">
+		<antcall target="e700"/>
+		<antcall target="e710"/>
+	</target>
+
+	<!--
+		Build for Samsung E710	
+	-->
+	<target name="e710">
+        <ant antfile="scripts/build_core.xml" target="init.build">
+     		<property name="jar.name"	
+				   value="${MIDlet-Name}_SamsungE710_${version.part}"/>
+			<property name="device.id" value="Samsung/E710"/>
+
+			<property name="src.path" value="e700,partial-caching,samsung-sound-mmf,e710"/>
+			<property name="rsc.path" value="e700"/>
+		</ant>
+	</target>
+
+	<!--
+		Build for Samsung E700	
+	-->
+	<target name="e700">
+        <ant antfile="scripts/build_core.xml" target="init.build">
+     		<property name="jar.name"	
+				   value="${MIDlet-Name}_SamsungE700_${version.part}"/>
+			<property name="device.id" value="Samsung/SGH-E700"/>
+
+			<property name="src.path" value="e700,partial-caching,samsung-sound-mmf"/>
+			<property name="rsc.path" value="e700"/>
+		</ant>
+	</target>
+
+	<!--
+		Builds for all Motorola devices
+	-->
+	<target name="all.motorola">
+		<antcall target="v500"/>
+	</target>
+
+	<!--
+		Build for Motorola V series devices
+	-->
+	<target name="v500">
+		<ant antfile="scripts/build_core.xml" target="init.build">
+			<property name="MicroEdition-Profile" value="MIDP-2.0"/>
+      		<property name="jar.name"	
+				   value="${MIDlet-Name}_MotorolaV500_${version.part}"/>
+			<property name="device.id" value="Motorola/V500"/>
+
+			<property name="src.path" value="v500,mmapi-sound-wav"/>
+			<property name="rsc.path" value="v500"/>
+		</ant>
+	</target>
+
+	<!--
+		Builds for all SE devices
+	-->
+	<target name="all.se">
+		<antcall target="k700"/>
+		<antcall target="k500"/>
+		<antcall target="t610"/>
+	</target>
+
+	<!--
+		Build for SE k700 like devices
+	-->
+	<target name="k700">
+		<ant antfile="scripts/build_core.xml" target="init.build">
+			<property name="MicroEdition-Profile" value="MIDP-2.0"/>
+      		<property name="jar.name"	
+				   value="${MIDlet-Name}_SE_K700_${version.part}"/>
+			<property name="device.id" value="Sony-Ericsson/K700"/>
+
+			<property name="src.path" value="k700,nokia-sound-wav"/> <!---->
+			<property name="rsc.path" value="k700"/>
+		</ant>
+	</target>
+
+	<!--
+		Build for SE k500 like devices
+	-->
+	<target name="k500">
+		<ant antfile="scripts/build_core.xml" target="init.build">
+			<property name="MicroEdition-Profile" value="MIDP-2.0"/>
+      		<property name="jar.name"	
+				   value="${MIDlet-Name}_SE_K500_${version.part}"/>
+			<property name="device.id" value="Sony-Ericsson/K500"/>
+
+			<property name="src.path" value="k500,nokia-sound-wav"/> <!---->
+			<property name="rsc.path" value="k500"/>
+		</ant>
+	</target>
+
+	<!--
+		Build for SE T610 like devices (T616/618, T630, Z600)
+	-->
+	<target name="t610">
+		<ant antfile="scripts/build_core.xml" target="init.build">
+      		<property name="jar.name"	
+				   value="${MIDlet-Name}_SE_T610_${version.part}"/>
+			<property name="device.id" value="Sony-Ericsson/T610"/>
+
+			<property name="src.path" value="t610,mmapi-sound-midi-only,partial-caching"/>
+			<property name="rsc.path" value="t610"/>
+		</ant>
+	</target>
+
+	<!--
+		Builds for all Nokia devices
+	-->
+	<target name="all.nokia">
+		<antcall target="3510i"/>
+		<antcall target="7250"/>
+		<antcall target="N73"/>
+		<antcall target="6600"/>
+		<antcall target="3650"/>
+	</target>
+
+	<!--
+		Build for Nokia 3510i
+	-->
+	<target name="3510i">
+		<ant antfile="scripts/build_core.xml" target="init.build">
+      		<property name="jar.name"	
+				   value="${MIDlet-Name}_Nokia3510i_${version.part}"/>
+			<property name="device.id" value="Nokia/3510i"/>
+
+			<property name="src.path" value="series40,partial-caching,series30"/>
+			<property name="rsc.path" value="s30"/>
+		</ant>
+	</target>
+
+	<!--
+		Build for Nokia 6131 (s40 dp3 fp1 240x320)
+	-->
+	<target name="6131">
+		<ant antfile="scripts/build_core.xml" target="init.build">
+			<property name="MicroEdition-Profile" value="MIDP-2.0"/>
+			<property name="MicroEdition-Configuration" value="CLDC-1.1"/>
+      		<property name="jar.name"	
+				   value="${MIDlet-Name}_Nokia6131_${version.part}"/>
+			<property name="device.id" value="Nokia/6131"/>
+
+			<property name="src.path" value="series40,N73,6131,nokia-sound-s40-dp2"/><!-- TODO: Config -->
+			<property name="rsc.path" value="s40_dp3_240x320"/>
+		</ant>
+	</target>
+
+
+	<!--
+		Build for Nokia 7250 like devices (DP 1.0)
+	-->
+	<target name="7250">
+		<ant antfile="scripts/build_core.xml" target="init.build">
+      		<property name="jar.name"	
+				   value="${MIDlet-Name}_Nokia7250_${version.part}"/>
+			<property name="device.id" value="Nokia/7250"/>
+
+			<property name="src.path" value="series40,partial-caching"/>
+			<property name="rsc.path" value="s40_dp1"/>
+		</ant>
+	</target>
+
+	<!--
+		Build for Nokia N73
+	-->
+	<target name="N73">
+		<ant antfile="scripts/build_core.xml" target="init.build">
+			<property name="MicroEdition-Profile" value="MIDP-2.0"/>
+			<property name="MicroEdition-Configuration" value="CLDC-1.1"/>
+      		<property name="jar.name"	
+				   value="${MIDlet-Name}_NokiaN73_${version.part}"/>
+			<property name="device.id" value="Nokia/N73"/>
+
+			<property name="src.path" value="series40,N73,nokia-sound-wav"/>
+			<property name="rsc.path" value="s60_dp3_240x320"/>
+		</ant>
+	</target>
+
+
+	<!--
+		Build for Nokia 6600
+	-->
+	<target name="6600">
+		<ant antfile="scripts/build_core.xml" target="init.build">
+      		<property name="jar.name"	
+				   value="${MIDlet-Name}_Nokia6600_${version.part}"/>
+			<property name="device.id" value="Nokia/6600"/>
+
+			<property name="src.path" value="series40,series60,nokia-sound-wav"/>
+			<property name="rsc.path" value="s60_dp1"/>
+		</ant>
+	</target>
+
+	<!--
+		Build for Nokia 3650
+	-->
+	<target name="3650">
+		<ant antfile="scripts/build_core.xml" target="init.build">
+      		<property name="jar.name"	
+				   value="${MIDlet-Name}_Nokia3650_${version.part}"/>
+			<property name="device.id" value="Nokia/3650"/>
+
+			<property name="src.path" value="series40,series60,3650,nokia-sound-wav"/>
+			<property name="rsc.path" value="s60_dp1"/>
+		</ant>
+	</target>
+
+</project>

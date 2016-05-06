@@ -1,0 +1,9 @@
+#############
+# Help text #
+#############
+Målet med spillet er at fuldføre alle levels ved at placere bomber på de strategisk rigtige steder for at overvinde fjender og sprænge din vej gennem forhindringerne.\n\nPowerups\n\nSpillet har 3 forskellige typer Powerups som du kan finde under de forskellige forhindringer. Der er:\nFlammer - øger styrken af BombMans bomber.\nBomber - BombMan kan smide flere bomber på en gang uden at skulle vente på den første detonerer.\nRulleskøjter - øger BombMans hastighed.\n\nStyring\n\nBrug joystick eller de numeriske knapper til at styre BombMan.\nBrug SKYD knappen for at droppe bomber.
+
+##############
+# About text #
+##############
+Udviklet og udgivet af:\nSandager Small Games\nCopyright:\nSandager Small Games 2005\nSplash grafik:\nJeppe Højholdt\nGrafik:\nNewGround\nProduceret af:\nNewGround

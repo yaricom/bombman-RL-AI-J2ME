@@ -1,0 +1,46 @@
+#################################
+# Common Bombman Game resources #
+#################################
+# Main menu options
+Continue
+New Game
+Top scores
+Options
+Help
+About
+
+# Options menu
+Lang.
+Music
+Sound
+
+# Pause menu
+Resume
+Restart level
+Main menu
+Exit game
+
+# Commands
+Select
+Yes
+Change
+Start
+Save
+
+Pause
+OK
+No
+Back
+Exit
+
+# Text items
+Loading...
+Press any key
+Your current progress will be lost. Are you sure?
+Level:
+You win!
+You lose!
+Would you like to play again?
+Game is over!\nYour score:
+Would you like to store your achievements?
+Please enter your name:

@@ -1,0 +1,46 @@
+#################################
+# Common Bombman Game resources #
+#################################
+# Main menu options
+Continuar
+Nuevo juego
+Puntaje mayor
+Opciones
+Ayuda
+Acerca
+
+# Options menu
+Lengua
+Musica
+Sonido
+
+# Pause menu
+Continuar
+Reempezar
+Menú principal
+Salir del juego
+
+# Commands
+Elegir
+Sí
+Cambiar
+Empezar
+Guardar
+
+Pausa
+OK
+NO
+Regresar
+Salir
+
+# Text items
+Cargando...
+Pincha el teclado
+Tu juego no ha sido guardado. Estás seguro?
+Nivel:
+Ganaste
+Perdiste
+Deseas jugar de nuevo?
+El juego terminó.\n Tu puntaje es:
+Quieres guardar tus resultados?
+Escribe tu nombre:

@@ -1,0 +1,46 @@
+#################################
+# Common Bombman Game resources #
+#################################
+# Main menu options
+Fortfahren
+Neues Spiel
+Bestenliste
+Einstellungen
+Hilfe
+Über
+
+# Options menu
+Sprache
+Musik
+Ton
+
+# Pause menu
+Fortfahren
+Stuferestart
+Hauptmenü
+Spiel beenden
+
+# Commands
+Wählen
+Ja
+Wechseln
+Start
+Speichern
+
+Pause
+OK
+Nein
+Zurück
+Abbrechen
+
+# Text items
+Lade...
+Taste drücken
+Das Spiel wird nicht gespeichert. Bist du sicher?
+Stufe:
+Du gewinnst!
+Du verlierst!
+Spiel wiederholen?
+Spiel beendet. Dein Punktestand:
+Ergebnisse speichern?
+Name eingeben:

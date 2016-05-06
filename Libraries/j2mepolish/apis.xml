@@ -1,0 +1,210 @@
+<!-- 
+	apis.xml describes some often used device libraries. 
+
+    Copyright (c) 2004, 2005 Robert Virkus / Enough Software
+
+    This file is part of J2ME Polish.
+
+    J2ME Polish is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    J2ME Polish is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Foobar; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+    Commercial licenses are also available, please
+    refer to the accompanying LICENSE.txt or visit
+    http://www.j2mepolish.org for details.
+
+-->
+<apis>
+
+	<api>
+		<name>Nokia User Interface API</name>
+		<description>The Nokia User Interface API provides
+			some advanced drawing functionalities.
+		</description>
+		<names>nokia-ui,nokia-ui-api, nokiaui, nokiauiapi</names>
+		<symbol>nokia-ui</symbol>
+		<files>nokia-ui.jar, nokiaui.zip</files>
+		<path>import/nokia-ui.jar</path>
+	</api>
+	
+	<api>
+		<name>Mobile Media API</name>
+		<description>The Mobile Media API provides
+			functionalities for playing and capturing sounds and videos.
+		</description>
+		<names>mmapi,mm-api, JSR-135, JSR135</names>
+		<symbol>mmapi</symbol>
+		<files>mmapi.jar</files>
+		<path>import/mmapi.jar</path>
+	</api>
+	
+	<api>
+		<name>Wireless Messaging API</name>
+		<description>The Wireless Messaging API provides
+			functionalities for sending and receiving messages (SMS).
+		</description>
+		<names>wmapi, wm-api, JSR-120, JSR120, wma, wmapi-1.1, wmapi1.1</names>
+		<symbol>wmapi</symbol>
+		<files>wmapi.jar</files>
+		<path>import/wmapi.jar</path>
+	</api>
+	
+	<api>
+		<name>Wireless Messaging API 2.0</name>
+		<description>The Wireless Messaging API 2.0 provides
+			functionalities for sending and receiving text and multimedia messages (SMS and MMS).
+		</description>
+		<names>wmapi2.0, wmapi2, JSR-205, JSR205</names>
+		<symbol>wmapi2.0</symbol>
+		<parent>wmapi</parent>
+		<files>wmapi20.jar</files>
+		<path>import/wmapi20.jar</path>
+	</api>
+	
+	<api>
+		<name>Location API</name>
+		<description>The Location API provides
+			functionalities for determing the position of the user.
+		</description>
+		<names>location api, location-api, JSR-179</names>
+		<symbol>locationapi</symbol>
+		<files>locationapi.jar</files>
+		<path>import/locationapi.jar</path>
+	</api>
+
+	<api>
+		<name>Bluetooth API</name>
+		<description>The Bluetooth API provides
+			functionalities for data exchange with other bluetooth devices.
+		</description>
+		<names>btapi,bt-api, bluetooth, bluetooth-api, JSR-82, JSR82</names>
+		<symbol>btapi</symbol>
+		<files>btapi.jar</files>
+		<path>import/btapi.jar</path>
+	</api>
+
+	<api>
+		<name>3D API</name>
+		<description>The Mobile 3D Graphics API provides 3D functions for J2ME.
+		</description>
+		<names>3d, 3d-api,3dapi, JSR-184, JSR184, m3g, m3gapi</names>
+		<symbol>3dapi</symbol>
+		<files>m3g.jar, jsr184.jar</files>
+		<path>import/m3g.jar</path>
+	</api>
+
+	<api>
+		<name>Java Technology for the Wireless Industry.</name>
+		<description>
+		A JSR-185 compatible device supports the the WMAPI
+		as well as the MIDP/2.0 platform. The MMAPI is only conditionally
+		required (when the device has J2ME Multimedia APIs). 
+		</description>
+		<names>JSR-185, JSR185, JTWI, jtwi, jsr-185</names>
+		<symbol>jtwi</symbol>
+	</api>
+
+	<api>
+		<name>PDA API</name>
+		<description>The PDA-API defines optional packages for features that are commonly found on PDAs and other mobile devices in the J2ME space: one package for Personal Information Management (PIM) access, and one package for accessing file systems through the Generic Connection Framework (GCF).
+		</description>
+		<names>pdaapi, pda-api, pim-api, fileconnection-api, JSR-75, JSR75</names>
+		<symbol>pdaapi</symbol>
+		<files>pdaapi.jar</files>
+		<path>import/pdaapi.jar</path>
+	</api>
+	
+	<api>
+		<name>Motorola Lightweight Windowing Toolkit</name>
+		<description>
+		Motorola specific graphical user interface (GUI) extension for J2ME technology-enabled wireless phones.
+		</description>
+		<names>motorola-lwt, motorola lwt, lwt</names>
+		<symbol>motorola-lwt</symbol>
+		<files>motorola-lwt.jar</files>
+		<path>import/motorola-lwt.jar</path>
+	</api>
+
+	<api>
+		<name>Vodafone Service Class Library</name>
+		<description>
+		A JBlend extension for some devices of the Vodafone operator.
+		</description>
+		<names>VSCL</names>
+		<symbol>vscl</symbol>
+		<files>vscl.jar</files>
+		<path>import/vscl.jar</path>
+	</api>
+
+	<api>
+		<name>Vodafone Service Class Library 1.0.1</name>
+		<description>
+		A JBlend extension for some devices of the Vodafone operator.
+		</description>
+		<names>VSCL-1.0.1</names>
+		<parent>VSCL</parent>
+		<symbol>vscl-1.0.1</symbol>
+		<files>vscl-1.0.1.jar</files>
+		<path>import/vscl-1.0.1.jar</path>
+	</api>
+	
+	<api>
+		<name>Vodafone Service Class Library 1.1.0</name>
+		<description>
+		A JBlend extension for some devices of the Vodafone operator.
+		</description>
+		<names>VSCL-1.1.0</names>
+		<parent>VSCL-1.0.1</parent>
+		<symbol>vscl-1.1.0</symbol>
+		<files>vscl-1.1.0.jar</files>
+		<path>import/vscl-1.1.0.jar</path>
+	</api>
+
+	<api>
+		<name>Siemens Color Game API</name>
+		<description>A predecessor of the MIDP/2.0 game API without
+		transformations.
+		</description>
+		<names>siemens-color-game-api</names>
+		<symbol>siemens-color-game-api</symbol>
+		<files>siemens-color-game-api.jar</files>
+		<path>import/siemens-color-game-api.jar</path>
+	</api>
+
+	<api>
+		<name>Siemens Extension API</name>
+		<description>A collection of additional classes for Siemens MIDP/1.0 devices.
+		</description>
+		<names>siemens-extension-api</names>
+		<symbol>siemens-extension-api</symbol>
+		<features>supportsWMAPIWrapper</features>
+		<files>siemens-extension-api.jar</files>
+		<path>import/siemens-extension-api.jar</path>
+	</api>
+
+<!--
+	You can use this block to define a new API
+	( remove these XML-comments ):
+
+	<api>
+		<name></name>
+		<description>
+		</description>
+		<names></names>
+		<symbol></symbol>
+		<files>j2me-api.jar</files>
+		<path>import/j2me-api.jar</path>
+	</api>
+-->
+</apis>
+

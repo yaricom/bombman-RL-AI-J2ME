@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	$Id: build_ssg_all.xml 1015 2006-09-12 12:29:33Z yaric $
+
+	Build script to prepare general english distributives.
+	@author: Yaroslav Omelyanenko
+-->
+<project name="BombMan" basedir="." default="all">
+
+	<property name="path.modifier" value="ssg"/>
+	<property name="locale.path" value="all"/>
+
+	<!--
+	   Removes all distributives
+	-->
+	<target name="clean_builds" description="Removes all builds">
+		<ant antfile="scripts/build.xml" target="clean_builds"/>
+	</target>
+
+	<!--
+		Builds all handsets
+	-->
+	<target name="all">
+		<ant antfile="scripts/build.xml" target="all"/>
+	</target>
+
+	<!--
+		Build for Samsung E710	
+	-->
+	<target name="e710">
+		<ant antfile="scripts/build.xml" target="e710"/>
+	</target>
+
+
+	<!--
+		Build for Samsung E700	
+	-->
+	<target name="e700">
+		<ant antfile="scripts/build.xml" target="e700"/>
+	</target>
+
+
+	<!--
+		Build for Motorola V series devices
+	-->
+	<target name="v500">
+		<ant antfile="scripts/build.xml" target="v500"/>
+	</target>
+
+	<!--
+		Build for SE k700 like devices
+	-->
+	<target name="k700">
+		<ant antfile="scripts/build.xml" target="k700"/>
+	</target>
+
+	<!--
+		Build for SE k500 like devices
+	-->
+	<target name="k500">
+		<ant antfile="scripts/build.xml" target="k500"/>
+	</target>
+
+	<!--
+		Build for SE T610 like devices (T616/618, T630, Z600)
+	-->
+	<target name="t610">
+		<ant antfile="scripts/build.xml" target="t610"/>
+	</target>
+
+
+	<!--
+		Build for Nokia 3510i
+	-->
+	<target name="3510i">
+		<ant antfile="scripts/build.xml" target="3510i"/>
+	</target>
+
+	<!--
+		Build for Nokia 6131 (s40 dp3 fp1 240x320)
+	-->
+	<target name="6131">
+		<ant antfile="scripts/build.xml" target="6131"/>
+	</target>
+
+	<!--
+		Build for Nokia 7250 like devices (DP 1.0)
+	-->
+	<target name="7250">
+		<ant antfile="scripts/build.xml" target="7250"/>
+	</target>
+
+	<!--
+		Build for Nokia N73
+	-->
+	<target name="N73">
+		<ant antfile="scripts/build.xml" target="N73"/>
+	</target>
+
+	<!--
+		Build for Nokia 6600
+	-->
+	<target name="6600">
+		<ant antfile="scripts/build.xml" target="6600"/>
+	</target>
+
+	<!--
+		Build for Nokia 3650
+	-->
+	<target name="3650">
+		<ant antfile="scripts/build.xml" target="3650"/>
+	</target>
+
+</project>
