@@ -3,6 +3,8 @@ This classic game was created back in year 2005 with what is called now as Reinf
 
 So, RL methodologies was applied as natural evolution of my considerations about was is best suited for this task realisation.
 
+The RL AI agent implementation may be found mostly in this class: [AIBombmanSprite.java](https://github.com/yaricom/bombman-RL-AI-J2ME/blob/master/src/common/ng/games/bombman/sprites/AIBombmanSprite.java)
+
 ## Building, running
 In order to build executables you need to have J2ME platform installed on your system. As for now Java ME SDK may be found here: [JAVA ME SDK](http://www.oracle.com/technetwork/java/embedded/javame/javame-sdk/overview/index.html)
 
