@@ -21,7 +21,7 @@ I'm not sure if it's possible to build it against latest releaes of Java Micro E
 Watch this repository if iterested - I'll post updates about Python porting.
 
 ## Bonus
-If you happen to still have one of those Nokia Series 40 or Series 60 handsets operable, than you are the lucky one! Because as additional bonus for your thriftiness you may found working binaries of the game which may be easily installed on your device. Just look into [Releases](https://github.com/yaricom/bombman-RL-AI-J2ME/tree/master/dist/ssg/all/release) directory. I've small gift to you if you have Nokia device similar to [Nokia 6131](http://www.gsmarena.com/nokia_6131-1434.php) or [Nokia N73](http://www.gsmarena.com/nokia_n73-1550.php)
+If you happen to still have one of those Nokia Series 40 or Series 60 handsets operable, than you are the lucky one! Because as additional bonus for your thriftiness you may found working binaries of the game which may be easily installed on your device. Just look into [Releases](https://github.com/yaricom/bombman-RL-AI-J2ME/tree/master/dist/ssg/all/release) directory - I've small gift to you if you have Nokia device similar to [Nokia 6131](http://www.gsmarena.com/nokia_6131-1434.php) or [Nokia N73](http://www.gsmarena.com/nokia_n73-1550.php)
 
 ## Even more fun
 Here is some GIF trailer of a game play. The RL AI agent is on the right site - the one in blue helmet :)
