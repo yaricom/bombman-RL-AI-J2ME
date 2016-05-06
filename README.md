@@ -21,4 +21,5 @@ I'm not sure if it's possible to build it against latest releaes of Java Micro E
 Watch this repository if iterested - I'll post updates about Python porting.
 
 ## Even more fun
+Here is some GIF trailer of a game play. The RL AI agent is on the right site - the one in blue outfits :)
 ![BombMan](https://raw.githubusercontent.com/yaricom/bombman-RL-AI-J2ME/master/docs/ng_site/bm_trailer_176x208.gif)
