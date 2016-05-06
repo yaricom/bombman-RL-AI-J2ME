@@ -1,4 +1,4 @@
-# BombMan for J2ME with RL AI agent
+# BombMan for J2ME with Reinforcement Learning AI agent
 ![BombMan](https://raw.githubusercontent.com/yaricom/bombman-RL-AI-J2ME/master/docs/ng_site/bm_screen_shoots_568x664.gif)
 
 This classic game was created back in year 2005 with what is called now as Reinforcement Learning AI agent in mind. It was designed to support almost all existing on that period J2ME based handsets groups. As result, taking into account that some of those devices had very strict processing/memory resources available, it was required to implement state-of-the-art AI agent to challenge human player and able to operate under such tough conditions.
@@ -27,3 +27,11 @@ If you happen to still have one of those Nokia Series 40 or Series 60 handsets o
 Here is some GIF trailer of a game play. The RL AI agent is on the right site - the one in blue helmet :)
 
 ![BombMan](https://raw.githubusercontent.com/yaricom/bombman-RL-AI-J2ME/master/docs/ng_site/bm_trailer_176x208.gif)
+
+## Author
+
+Iaroslav Omelianenko
+
+## License
+
+BombMan is available under the MIT license. See the LICENSE file for more info.
