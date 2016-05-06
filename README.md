@@ -5,7 +5,7 @@ This classic game was created back in year 2005 with what is called now as Reinf
 
 So, RL methodologies was applied as natural evolution of my considerations about was is best suited for this task realisation.
 
-The RL AI agent implementation may be found mostly in this class: [AIBombmanSprite.java](https://github.com/yaricom/bombman-RL-AI-J2ME/blob/master/src/common/ng/games/bombman/sprites/AIBombmanSprite.java)
+The RL AI agent implementation may be found in this class: [AIBombmanSprite.java](https://github.com/yaricom/bombman-RL-AI-J2ME/blob/master/src/common/ng/games/bombman/sprites/AIBombmanSprite.java)
 
 ## Building, running
 In order to build executables you need to have J2ME platform installed on your system. As for now Java ME SDK may be found here: [JAVA ME SDK](http://www.oracle.com/technetwork/java/embedded/javame/javame-sdk/overview/index.html)
@@ -21,5 +21,6 @@ I'm not sure if it's possible to build it against latest releaes of Java Micro E
 Watch this repository if iterested - I'll post updates about Python porting.
 
 ## Even more fun
-Here is some GIF trailer of a game play. The RL AI agent is on the right site - the one in blue outfits :)
+Here is some GIF trailer of a game play. The RL AI agent is on the right site - the one in blue helmet :)
+
 ![BombMan](https://raw.githubusercontent.com/yaricom/bombman-RL-AI-J2ME/master/docs/ng_site/bm_trailer_176x208.gif)
