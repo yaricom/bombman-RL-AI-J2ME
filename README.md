@@ -14,7 +14,7 @@ The main build scripts are:
 - build_res_ssg.xml - to build all neccessary game resources (it will require PNG processing library developed by me)
 - build_ssg_all.xml - to build binaries for all supported handsets (it will require additional tools developed by me )
 
-In order to build it will require Apache ANT build system installed in your environment. All mentioned additionsl tools and libraries provided in [Libraries] folder as JAR files.
+In order to build it will require Apache ANT build system installed in your environment. All mentioned additional tools and libraries provided under [Libraries](https://github.com/yaricom/bombman-RL-AI-J2ME/tree/master/Libraries) folder as JAR files.
 
 I'm not sure if it's possible to build it against latest releaes of Java Micro Edition platform and leave this to anybody interseted enough. Meantime I'll try to port this game to Python in order to use it in my further plays with RL AI.
 
