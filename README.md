@@ -3,7 +3,7 @@
 
 This classic game was created back in year 2005 with what is called now as Reinforcement Learning (RL) Artifical Inteligence (AI) agent in mind. It was designed to support almost all existing on that period Java 2 Micro Edition (J2ME) based groups of handsets. As result, taking into account that some of those devices had very strict processing/memory resources consumption requirements, it was required to implement state-of-the-art AI agent to challenge human player and be able to operate under such tough conditions.
 
-So, RL methodologies was applied as natural evolution of my considerations about was is best suited for this task realisation.
+So, RL methodologies was applied as result of natural evolution of my considerations about was is the best suited for this task realisation. The AI algorithm was developed by me from scratch without any references.
 
 The RL AI agent implementation may be found in this class: [AIBombmanSprite.java](https://github.com/yaricom/bombman-RL-AI-J2ME/blob/master/src/common/ng/games/bombman/sprites/AIBombmanSprite.java)
 
