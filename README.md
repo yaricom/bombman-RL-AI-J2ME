@@ -16,7 +16,7 @@ The main build scripts are:
 
 In order to build it will require Apache ANT build system installed in your environment. All mentioned additional tools and libraries provided under [Libraries](https://github.com/yaricom/bombman-RL-AI-J2ME/tree/master/Libraries) folder as JAR files.
 
-I'm not sure if it's possible to build it against latest releaes of Java Micro Edition platform and leave this to anybody interseted enough. Meantime I'll try to port this game to Python in order to use it in my further plays with RL AI.
+I'm not sure if it's still possible to build it against latest releases of Java Micro Edition platform and leave this to find out by anybody interseted enough. Meantime I'll try to port this game to Python in order to use it in my further plays with RL AI.
 
 Watch this repository if iterested - I'll post updates about Python porting.
 
